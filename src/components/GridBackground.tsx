@@ -1,16 +1,16 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { useMantineTheme } from '@mantine/core';
 
-export interface DotsProps extends React.ComponentPropsWithoutRef<'svg'> {
+export interface GridProps extends React.ComponentPropsWithoutRef<'svg'> {
     lineSpacingPx?: number;
     strokeWidth?: number;
 }
 
-export function Dots({
+export function GridLines({
     lineSpacingPx = 40,
     strokeWidth = 0.5,
     ...others
-}: DotsProps) {
+}: GridProps) {
 
     const svgRef = useRef(null);
     const theme = useMantineTheme();
