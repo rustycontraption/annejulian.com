@@ -1,10 +1,23 @@
 .header {
     height: 56px;
-    /* margin-bottom: 120px; */
-    background-color: var(--mantine-color-body);
-    backdrop-filter: blur(0.5rem);
-    border-bottom: 1px solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+    background-color: transparent;
+    backdrop-filter: blur(5rem);
     color: var(--mantine-color-gray);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--mantine-color-body);
+    opacity: 0.75;
+    z-index: -1;
 }
 
 .inner {
@@ -22,8 +35,4 @@
     text-decoration: none;
     color: var(--mantine-color-gray);
     font-weight: 500;
-}
-
-.linkLabel {
-    margin-right: 5px;
 }

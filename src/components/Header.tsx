@@ -8,7 +8,7 @@ import classes from './Header.module.css';
 import { ThemeToggle } from "../components/ThemeToggle";
 
 const links = [
-    { link: '/', label: <FaHome size={22} />, key: 'home' }, // Added home link
+    { link: '/', label: <FaHome size={22} />, key: 'home' },
     { link: '/about', label: 'About', key: 'about' },
     { link: '/work', label: 'Work', key: 'work' },
 ];
@@ -39,18 +39,22 @@ export default function HeaderSimple() {
                 <div className={classes.inner}>
                     <div>Anne Julian</div>
                     <Group gap={5} visibleFrom="xs">
-                        {items}
+                        {items.slice(1)}
+                    </Group>
+                    <Group gap={2} visibleFrom="xs">
+                        {items[0]}
                         <ThemeToggle />
                     </Group>
                     <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" aria-label="Toggle navigation menu" />
                 </div>
-                <Drawer position='right' size="25%" opened={opened} onClose={toggle} radius="md" overlayProps={{ backgroundOpacity: 0.5, blur: 4 }}>
+                <Drawer hiddenFrom="xs" position='right' size="25%" opened={opened} onClose={toggle} radius="md" overlayProps={{ backgroundOpacity: 0.5, blur: 4 }}>
                     <Stack gap={5} align='flex-start'>
-                        <Group gap={5}>{items[0]}<ThemeToggle /></Group>
+                        <ThemeToggle />
+                        {items[0]}
                         {items.slice(1)}
                     </Stack>
                 </Drawer>
             </Container>
-        </header>
+        </header >
     );
 }
