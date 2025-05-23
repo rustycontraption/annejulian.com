@@ -1,20 +1,19 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { useMantineTheme } from '@mantine/core';
 
 export interface GridProps extends React.ComponentPropsWithoutRef<'svg'> {
     lineSpacingPx?: number;
     strokeWidth?: number;
+    strokeColor?: string;
 }
 
 export function GridLines({
     lineSpacingPx = 40,
     strokeWidth = 0.5,
+    strokeColor = "currentColor",
     ...others
 }: GridProps) {
 
     const svgRef = useRef(null);
-    const theme = useMantineTheme();
-    const lineColor = theme.colors.dark[6];
 
     const [containerWidth, setContainerWidth] = useState(0);
     const [containerHeight, setContainerHeight] = useState(0);
@@ -65,7 +64,6 @@ export function GridLines({
                 y1={y}
                 x2={containerWidth}
                 y2={y}
-                stroke={lineColor}
                 strokeWidth={strokeWidth}
             />
         );
@@ -80,7 +78,6 @@ export function GridLines({
                 y1="0"
                 x2={x}
                 y2={containerHeight}
-                stroke={lineColor}
                 strokeWidth={strokeWidth}
             />
         );
@@ -95,7 +92,6 @@ export function GridLines({
                 y1={containerHeight}
                 x2={x}
                 y2="0"
-                stroke={lineColor}
                 strokeWidth={strokeWidth}
             />
         );

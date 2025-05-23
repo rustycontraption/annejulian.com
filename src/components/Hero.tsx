@@ -5,7 +5,7 @@ import { GridLines } from './GridBackground';
 export function Hero() {
     return (
         <Container className={classes.wrapper} size="xl">
-            <GridLines className={classes.gridlines} style={{ left: 0, top: 0 }} />
+            <GridLines className={classes.gridlines} />
             <div className={classes.inner}>
                 <Title className={classes.title}>
                     Hi!<br />
