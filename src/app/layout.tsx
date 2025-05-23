@@ -1,6 +1,7 @@
 'use client';
 
 import { Raleway, Geist_Mono } from "next/font/google";
+import { Hero } from "../components/Hero";
 import Header from "../components/Header";
 
 import "./globals.css";
@@ -20,18 +21,20 @@ const geistMono = Geist_Mono({
 
 const theme = createTheme({
   other: {
-    greyLight: '#495057',
-    greyDark: '#b8b8b8'
+    // define custom colors here
   }
 });
 
 const resolver: CSSVariablesResolver = (theme) => ({
   variables: {},
   light: {
-    '--mantine-color-gray': theme.other.greyLight,
+    '--mantine-color-gray': theme.colors.gray[8],
+    '--background-color': theme.colors.gray[2],
   },
   dark: {
-    '--mantine-color-gray': theme.other.greyDark,
+    '--mantine-color-gray': theme.colors.gray[4],
+    '--mantine-color-body': theme.colors.dark[9],
+    '--background-color': theme.colors.dark[6]
   },
 });
 
@@ -47,9 +50,8 @@ export default function RootLayout({
       >
         <ColorSchemeScript />
         <MantineProvider theme={theme} cssVariablesResolver={resolver}>
-
           <Header />
-
+          <Hero />
           {children}
         </MantineProvider>
 
