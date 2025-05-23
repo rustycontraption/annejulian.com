@@ -45,6 +45,7 @@ export function GridLines({
         return () => {
             if (svgRef.current) {
                 resizeObserver.unobserve(svgRef.current);
+                resizeObserver.disconnect();
             }
         };
     }, []);
