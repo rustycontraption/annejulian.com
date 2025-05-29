@@ -9,6 +9,7 @@ import "./globals.css";
 import '@mantine/core/styles.css';
 import { createTheme, MantineProvider, CSSVariablesResolver, ColorSchemeScript, mantineHtmlProps } from '@mantine/core';
 
+
 const raleway = Raleway({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -29,12 +30,12 @@ const resolver: CSSVariablesResolver = (theme) => ({
   variables: {},
   light: {
     '--mantine-color-gray': theme.colors.gray[8],
-    '--background-color': theme.colors.gray[2],
+    '--background-color': theme.colors.gray[4],
   },
   dark: {
     '--mantine-color-gray': theme.colors.gray[4],
     '--mantine-color-body': theme.colors.dark[9],
-    '--background-color': theme.colors.dark[6]
+    '--background-color': theme.colors.dark[4]
   },
 });
 
@@ -43,6 +44,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en" {...mantineHtmlProps}>
       <body
@@ -52,6 +54,7 @@ export default function RootLayout({
         <MantineProvider theme={theme} cssVariablesResolver={resolver}>
           <Header />
           <Hero />
+          <div style={{ height: 50 }}></div>
           {children}
         </MantineProvider>
 
