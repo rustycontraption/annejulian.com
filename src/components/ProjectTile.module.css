@@ -1,0 +1,37 @@
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-inline: 0px;
+    gap: var(--mantine-spacing-md);
+}
+
+.tileContainer {
+    min-width: 300px;
+    min-height: 300px;
+    position: relative;
+    width: 30%;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    @media (max-width: $mantine-breakpoint-xs) {
+        width: 100%;
+    }
+}
+
+.tileImg {
+    position: absolute;
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+    border-radius: var(--mantine-radius-md);
+    opacity: .3;
+}
+
+.tileText {
+    color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+    position: absolute;
+    padding: .5rem;
+    top: 5rem;
+    margin-inline-start: 2rem;
+}
