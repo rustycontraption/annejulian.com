@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Burger, Container, Drawer, Group, Stack } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { FaHome } from 'react-icons/fa';
+import { FaHome, FaGithub, FaLinkedin } from 'react-icons/fa';
 import classes from './Header.module.css';
 import { ThemeToggle } from "../components/ThemeToggle";
 
@@ -37,7 +37,12 @@ export default function HeaderSimple() {
         <header className={classes.header}>
             <Container fluid size="md">
                 <div className={classes.inner}>
-                    <div>Anne Julian</div>
+                    <div>
+                        <Group gap={20} visibleFrom="xs">
+                            <a href="https://github.com/rustycontraption/annejulian.com"><FaGithub size={22} /></a>
+                            <a href="https://www.linkedin.com/in/annejulian/"><FaLinkedin size={22} /></a>
+                        </Group>
+                    </div>
                     <Group gap={5} visibleFrom="xs">
                         {items.slice(1)}
                     </Group>
