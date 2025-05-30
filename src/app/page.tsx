@@ -3,6 +3,8 @@
 import { Container } from "@mantine/core";
 import ProjectTile from "../components/ProjectTile";
 import { useState } from "react";
+import { Hero } from "../components/Hero";
+
 import classes from "../components/ProjectTile.module.css";
 
 const projectTiles = [
@@ -31,8 +33,12 @@ const projects = projectTiles.map((tile) => (
 
 export default function Home() {
   return (
-    <Container className={classes.wrapper} size="xl">
-      {projects}
-    </Container>
+    <div>
+      <Hero />
+      <div style={{ height: 50 }}></div>
+      <Container className={classes.wrapper} size="xl">
+        {projects}
+      </Container>
+    </div>
   );
 }
