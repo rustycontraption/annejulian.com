@@ -1,7 +1,6 @@
 'use client';
 
 import { Raleway, Geist_Mono } from "next/font/google";
-import { Hero } from "../components/Hero";
 import Header from "../components/Header";
 
 import "./globals.css";
@@ -53,8 +52,6 @@ export default function RootLayout({
         <ColorSchemeScript />
         <MantineProvider theme={theme} cssVariablesResolver={resolver}>
           <Header />
-          <Hero />
-          <div style={{ height: 50 }}></div>
           {children}
         </MantineProvider>
 

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react';
+import Link from 'next/link'
 import { Burger, Container, Drawer, Group, Stack } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { FaHome, FaGithub, FaLinkedin } from 'react-icons/fa';
@@ -18,19 +19,17 @@ export default function HeaderSimple() {
     const [active, setActive] = useState(links[0].link);
 
     const items = links.map((link) => (
-        <a
+        <Link
             key={link.key}
             href={link.link}
             className={classes.link}
             data-active={active === link.link || undefined}
-            onClick={(event) => {
-                event.preventDefault();
+            onClick={() => {
                 setActive(link.link);
-                toggle();
             }}
         >
             {link.label}
-        </a>
+        </Link>
     ));
 
     return (
