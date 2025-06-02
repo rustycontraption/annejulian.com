@@ -9,14 +9,10 @@
 .tileContainer {
     min-width: 300px;
     min-height: 300px;
+    flex-grow: 1;
     position: relative;
-    width: 30%;
     box-sizing: border-box;
     overflow: hidden;
-
-    @media (max-width: $mantine-breakpoint-xs) {
-        width: 100%;
-    }
 }
 
 .tileImg {
@@ -24,7 +20,9 @@
     width: 100%;
     object-fit: cover;
     aspect-ratio: 1 / 1;
-    border-radius: var(--mantine-radius-md);
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: var(--mantine-radius-lg);
     opacity: .3;
 }
 
