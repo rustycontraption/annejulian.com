@@ -1,0 +1,13 @@
+.textDiv {
+    display: "flex";
+    flex: 1;
+}
+
+.imgDiv {
+    aspect-ratio: "1/1";
+    width: 30%;
+}
+
+.img {
+    border-radius: var(--mantine-radius-md);
+}
