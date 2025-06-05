@@ -1,4 +1,4 @@
-import { Group } from "@mantine/core"
+import { Group, Divider, Stack } from "@mantine/core"
 import classes from "./ProjectLogItem.module.css"
 
 interface LogItemProps {
@@ -12,19 +12,23 @@ export function LogItem({ leadElement, logText, logImg }: LogItemProps) {
     const imgElement = <div className={classes.imgDiv}><img src={logImg} className={classes.img} /></div>
 
     return (
-        <Group style={{ display: "flex" }}>
-            {leadElement === "text" ? (
-                <>
-                    {textElement}
-                    {imgElement}
-                </>
-            ) : (
-                <>
-                    {imgElement}
-                    {textElement}
-                </>
-            )}
-        </Group>
+        <Stack align="center">
+            <Group className={classes.groupWrapper}>
+                {leadElement === "text" ? (
+                    <>
+                        {textElement}
+                        {imgElement}
+                    </>
+                ) : (
+                    <>
+                        {imgElement}
+                        {textElement}
+                    </>
+                )}
+            </Group>
+            <Divider size="xs" className={classes.divider} />
+        </Stack>
+
     );
 }
 
