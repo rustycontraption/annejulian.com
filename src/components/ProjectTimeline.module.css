@@ -1,0 +1,9 @@
+.timeline {
+    width: 50%;
+}
+
+.img {
+    border-radius: var(--mantine-radius-md);
+    aspect-ratio: "1/1";
+    min-width: 30rem;
+}
