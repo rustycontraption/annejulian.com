@@ -2,8 +2,15 @@
     width: 50%;
 }
 
+.timeline :global(.mantine-Timeline-itemBullet) {
+    background-color: var(--mantine-color-body)
+}
+
+.logItem {
+    display: flex;
+}
+
 .img {
     border-radius: var(--mantine-radius-md);
     aspect-ratio: "1/1";
-    min-width: 30rem;
 }

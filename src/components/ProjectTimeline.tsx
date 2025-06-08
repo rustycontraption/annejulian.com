@@ -1,15 +1,15 @@
-import { Group, Divider, Stack, Timeline } from "@mantine/core"
+import { Stack, Timeline } from "@mantine/core"
 import classes from "./ProjectTimeline.module.css"
 import { useRef, useState, useEffect, useCallback } from "react";
+import { ProjectContent, ProjectLogItem } from "../resources/content";
 
-interface LogItemProps {
+interface ProjectItemProps {
     index: number;
-    logText: string;
-    logImg: string;
+    log: ProjectLogItem;
     onVisibilityChange: (index: number, isVisible: boolean) => void;
 }
 
-export function LogItem({ index, logText, logImg, onVisibilityChange }: LogItemProps) {
+export function ProjectItem({ index, log, onVisibilityChange }: ProjectItemProps) {
     const itemRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -37,22 +37,13 @@ export function LogItem({ index, logText, logImg, onVisibilityChange }: LogItemP
 
     return (
         <Stack ref={itemRef} className={classes.logItem}>
-            {logText}
-            <img src={logImg} className={classes.img} />
+            <pre>{log.text}</pre>
+            <img src={log.img} className={classes.img} />
         </Stack>
     );
 }
 
-interface LogEntryData {
-    text: string;
-    img: string;
-}
-
-interface LogProps {
-    logEntries: LogEntryData[];
-}
-
-export default function ProjectTimeline({ logEntries }: LogProps) {
+export default function ProjectTimeline({ logEntries }: ProjectContent) {
     const [activeIndex, setActiveIndex] = useState<number>(1);
 
     const handleVisibilityChange = useCallback((itemIndex: number, isVisible: boolean) => {
@@ -65,10 +56,9 @@ export default function ProjectTimeline({ logEntries }: LogProps) {
         <Timeline active={activeIndex} bulletSize={40} className={classes.timeline}>
             {logEntries.map((item, index) => (
                 <Timeline.Item key={index} bullet={<></>}>
-                    <LogItem
+                    <ProjectItem
                         index={index}
-                        logText={item.text}
-                        logImg={item.img}
+                        log={item}
                         onVisibilityChange={handleVisibilityChange}
                     />
                 </Timeline.Item>
