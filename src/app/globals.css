@@ -24,3 +24,18 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+pre {
+  font-family: "Raleway";
+
+  /* Since CSS 2.1 */
+  white-space: pre-wrap;
+  /* Mozilla, since 1999 */
+  white-space: -moz-pre-wrap;
+  /* Opera 4-6 */
+  white-space: -pre-wrap;
+  /* Opera 7 */
+  white-space: -o-pre-wrap;
+  /* Internet Explorer 5.5+ */
+  word-wrap: break-word;
+}
