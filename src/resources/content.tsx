@@ -41,7 +41,48 @@ const projectContent: ProjectContent = {
             img: `${urlPrefix}rabbit/pulley.webp`
         },
     ],
-    miniped: [],
+    miniped: [
+        {
+            text: "Let's figure out how to put a Tomos moped motor in this chinese pitbike.",
+            img: `${urlPrefix}miniped/pitbike.webp`
+        },
+        {
+            text: "Prototyping motor mount brackets.",
+            img: `${urlPrefix}miniped/mountmockup.webp`
+        },
+        {
+            text: "Using the 3D printed prototype brackets as a template, I cut steel brackets out of some scrap steel with a plasma cutter.  They weren't intended to be a permanent solution.",
+            img: `${urlPrefix}miniped/transmission.webp`
+        },
+        {
+            text: "Prototyping how to fit the tiny Tomos rear sprocket on a rear wheel designed to have a large motorcycle type rear sprocket.",
+            img: `${urlPrefix}miniped/testsprocket.webp`
+        },
+        {
+            text: "The final rear sprocket solution.",
+            img: `${urlPrefix}miniped/rearwheel.webp`
+        },
+        {
+            text: "I rebuilt the Tomos motor while I was at it.",
+            img: `${urlPrefix}miniped/bits.webp`
+        },
+        {
+            text: "Version one of the exhaust always had a leak at the header pipe that I never did solve.",
+            img: `${urlPrefix}miniped/exhaustv1.webp`
+        },
+        {
+            text: "The silencer kept vibrating off the bike.  This final solution included a dirtbike style soft joint between silencer and exhaust chamber to absorb vibrations, and a strap to hold the silencer on after it inevitabely worked its way free.",
+            img: `${urlPrefix}miniped/muffler.webp`
+        },
+        {
+            text: "Pitbikes lack all the lights and controls of a street legal bike.  I adapted various moped parts, like headlight and handlebar controls, to allow for street riding.",
+            img: `${urlPrefix}miniped/controls.webp`
+        },
+        {
+            text: "I cut up an intake and welded it back together to angle to the left side instead of the right, to avoid interfering with the exhaust chamber.",
+            img: `${urlPrefix}miniped/intake.webp`
+        },
+    ],
     dive: [
         {
             text: "The Highline College MaST Center wanted a 24/7 underwater livestream of the happenings under their dock, at three different depths.",
