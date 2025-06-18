@@ -11,11 +11,40 @@ export interface ProjectContent {
 }
 
 const projectContent: ProjectContent = {
-    rabbit: [],
+    rabbit: [
+        {
+            text: "The diesel engine died and the only engine the local junkyard had that would fit was a gasoline engine from a much newer model.  The mounting bracket bolt pattern was the same as the old diesel block so fitting it to the chassis was the easy part.  I wanted to do this conversion with minimal modification to the stock systems so that it could be easily swapped back to diesel at some point in the future; that was the hard part.",
+            img: null
+        },
+        {
+            text: "The replacement gas engine was fuel injected.  Carburation simplified the install by removing the necessity of wiring a more complex fuel injection system.",
+            img: `${urlPrefix}rabbit/carb.webp`
+        },
+        {
+            text: "I fabricated this simple bracket to route the old throttle cable to the new carburator at the correct angle.",
+            img: `${urlPrefix}rabbit/throttlecable.webp`
+        },
+        {
+            text: "One model of Rabbit sold in Europe in the 70s came with a gas engine and a mechanical fuel pump.  VW used the exact same engine design for diesel and gas engines for almost 30 years so the mechanical fuel pump bolted right on to the newer engine.",
+            img: `${urlPrefix}rabbit/fuelpump.webp`
+        },
+        {
+            text: "I've found drawing things out to visualize the connections between things to be extremely helpful for most tasks.",
+            img: `${urlPrefix}rabbit/sketching.webp`
+        },
+        {
+            text: "Prior to the ignition coil, ignition systems are still only 12v so this cheap little fusebox worked great, despite appearances.",
+            img: `${urlPrefix}rabbit/fusebox.webp`
+        },
+        {
+            text: "The water pump pulley alignment proved to be one of the most difficult problems to solve on this project.",
+            img: `${urlPrefix}rabbit/pulley.webp`
+        },
+    ],
     miniped: [],
     dive: [
         {
-            text: "The Highlign College MaST Center wanted a 24/7 underwater livestream of the happenings under their dock.",
+            text: "The Highline College MaST Center wanted a 24/7 underwater livestream of the happenings under their dock, at three different depths.",
             img: `${urlPrefix}dive/sunset.webp`
         },
         {
@@ -27,12 +56,20 @@ const projectContent: ProjectContent = {
             img: `${urlPrefix}dive/seahawks.webp`,
         },
         {
-            text: "We used Logitech c920 webcams because (at the time) they had an H.264 hardware encoder.",
+            text: "I used Logitech c920 webcams because (at the time) they had an H.264 hardware encoder.",
             img: `${urlPrefix}dive/crab_jellyfish.webp`
         },
         {
-            text: "MaST wanted three cameras but the USB busses available didn't have enough throughput to support more than one H.264 stream at a time so used three separate laptops, ",
+            text: "The MaST Center constructed a two-stories tall PVC pipe enclosure with viewports webcams and strapped it to the dock.  I ran very long USB cables up the pipe into the server room via a gap in the roof.",
             img: `${urlPrefix}dive/pylons.webp`
+        },
+        {
+            text: "The USB busses available didn't have enough throughput to support more than one H.264 stream at a time so used three separate laptops, one per webcam.",
+            img: `${urlPrefix}dive/pipefish.webp`
+        },
+        {
+            text: "VLC's command line tool, cvlc, transcoded the H.264 streams to RTMP and served them to the network.  Cron jobs to detect network connectivity, cvlc's activity, and the RTMP stream ensured the 24/7 uptime requirement.",
+            img: `${urlPrefix}dive/kelp_crab.webp`
         }
     ],
     drone: [
@@ -102,11 +139,11 @@ Motors: Brotherhobby returner r5 x3 and DYS SE Pro 2205 x1,
 }
 
 const projectTiles = [
-    { link: '/rabbit', tileImg: "https://static.annejulian.net/static/img/rabbit/rabbit.png", tileText: "lorem ipsum dolor sit amet", key: 'rabbit' },
-    { link: '/miniped', tileImg: "https://static.annejulian.net/static/img/miniped/mastminiped.jpg", tileText: "lorem ipsum dolor sit amet", key: 'miniped' },
-    { link: '/dive', tileImg: "https://static.annejulian.net/static/img/dive/mastdive.jpg", tileText: "lorem ipsum dolor sit amet", key: 'dive' },
-    { link: '/drone', tileImg: "https://static.annejulian.net/static/img/drone/hero.webp", tileText: "lorem ipsum dolor sit amet", key: 'drone' },
-    { link: '/gs750', tileImg: "https://static.annejulian.net/static/img/gs750/hero.webp", tileText: "lorem ipsum dolor sit amet", key: 'gs750' }
+    { link: '/rabbit', tileImg: "https://static.annejulian.net/static/img/rabbit/rabbit.png", tileText: "keep a 40 year old car alive", key: 'rabbit' },
+    { link: '/miniped', tileImg: "https://static.annejulian.net/static/img/miniped/mastminiped.jpg", tileText: "build a moped minibike", key: 'miniped' },
+    { link: '/dive', tileImg: "https://static.annejulian.net/static/img/dive/mastdive.jpg", tileText: "show the world the Salish Sea", key: 'dive' },
+    { link: '/drone', tileImg: "https://static.annejulian.net/static/img/drone/hero.webp", tileText: "learn to fly", key: 'drone' },
+    { link: '/gs750', tileImg: "https://static.annejulian.net/static/img/gs750/hero.webp", tileText: "build a custom motorcycle", key: 'gs750' }
 ];
 
 export { projectTiles, projectContent }; 

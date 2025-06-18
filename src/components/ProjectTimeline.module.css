@@ -8,6 +8,7 @@
 
 .logItem {
     display: flex;
+    padding-bottom: 10rem;
 }
 
 .img {
