@@ -71,7 +71,7 @@ const projectContent: ProjectContent = {
             img: `${urlPrefix}miniped/exhaustv1.webp`
         },
         {
-            text: "The silencer kept vibrating off the bike.  This final solution included a dirtbike style soft joint between silencer and exhaust chamber to absorb vibrations, and a strap to hold the silencer on after it inevitabely worked its way free.",
+            text: "The silencer kept vibrating off the bike.  This final solution included a dirtbike style soft joint between silencer and exhaust chamber to absorb vibrations, and a strap to hold the silencer on after it inevitably worked its way free.",
             img: `${urlPrefix}miniped/muffler.webp`
         },
         {
