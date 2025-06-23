@@ -28,9 +28,12 @@
 }
 
 .link {
-    display: block;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
     line-height: 1;
     padding: 8px 12px;
+    gap: 0.5rem;
     border-radius: var(--mantine-radius-sm);
     text-decoration: none;
     color: var(--mantine-color-gray);
