@@ -1,0 +1,12 @@
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-inline: 0px;
+    gap: var(--mantine-spacing-md);
+}
+
+.contentTimeline {
+    display: flex;
+    justify-content: center;
+}

@@ -23,14 +23,8 @@
     border-color: var(--background-color);
     stroke: var(--background-color);
 
-
-}
-
-.inner {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    justify-content: center;
+    background-size: cover;
+    background-position: center center;
 }
 
 .title {
@@ -40,6 +34,10 @@
     color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
     margin-bottom: var(--mantine-spacing-xs);
 
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
 
     @media (max-width: $mantine-breakpoint-xs) {
         font-size: 28px;

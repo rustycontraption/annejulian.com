@@ -1,0 +1,17 @@
+.timeline {
+    width: 50%;
+}
+
+.timeline :global(.mantine-Timeline-itemBullet) {
+    background-color: var(--mantine-color-body)
+}
+
+.logItem {
+    display: flex;
+    padding-bottom: 10rem;
+}
+
+.img {
+    border-radius: var(--mantine-radius-md);
+    aspect-ratio: "1/1";
+}

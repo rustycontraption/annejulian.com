@@ -20,6 +20,8 @@ const geistMono = Geist_Mono({
 });
 
 const theme = createTheme({
+  primaryColor: "gray",
+  primaryShade: { light: 8, dark: 4 },
   other: {
     // define custom colors here
   }
@@ -43,7 +45,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
     <html lang="en" {...mantineHtmlProps}>
       <body
