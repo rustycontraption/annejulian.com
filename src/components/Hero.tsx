@@ -3,8 +3,8 @@ import classes from './Hero.module.css';
 import { GridLines } from './GridBackground';
 
 interface HeroProps {
-    currentProject: string;
-    isVideoHeader: boolean;
+    currentProject?: string;
+    isVideoHeader?: boolean;
     title?: string;
 }
 
