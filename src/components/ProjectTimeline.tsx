@@ -1,7 +1,7 @@
 import { Stack, Timeline } from "@mantine/core"
 import classes from "./ProjectTimeline.module.css"
 import { useRef, useState, useEffect, useCallback } from "react";
-import { ProjectContent, ProjectLogItem } from "../resources/content";
+import { ProjectLogItem } from "../resources/content";
 
 interface ProjectItemProps {
     index: number;
@@ -43,7 +43,12 @@ export function ProjectItem({ index, log, onVisibilityChange }: ProjectItemProps
     );
 }
 
-export default function ProjectTimeline({ logEntries }: ProjectContent) {
+type ProjectTimelineProps = {
+    logEntries: ProjectLogItem[];
+};
+
+
+export const ProjectTimeline: React.FC<ProjectTimelineProps> = ({ logEntries }) => {
     const [activeIndex, setActiveIndex] = useState<number>(1);
 
     const handleVisibilityChange = useCallback((itemIndex: number, isVisible: boolean) => {
