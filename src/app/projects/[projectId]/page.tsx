@@ -2,7 +2,7 @@
 
 import { useParams } from 'next/navigation'
 import { Hero } from "../../../components/Hero"
-import ProjectTimeline from "../../../components/ProjectTimeline"
+import { ProjectTimeline } from "../../../components/ProjectTimeline"
 import { projectContent } from "../../../resources/content"
 import { Container } from "@mantine/core"
 import classes from "../../../components/Page.module.css"
