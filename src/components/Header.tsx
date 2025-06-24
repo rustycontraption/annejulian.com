@@ -2,16 +2,16 @@
 
 import { useState } from 'react';
 import Link from 'next/link'
-import { Burger, Container, Drawer, Group, Stack } from '@mantine/core';
+import { Burger, Container, Drawer, Group, Stack, Divider } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { FaHome, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaHome, FaGithub, FaLinkedin, FaUserCircle, FaDraftingCompass } from 'react-icons/fa';
 import classes from './Header.module.css';
 import { ThemeToggle } from "../components/ThemeToggle";
 
 const links = [
-    { link: '/', label: <FaHome size={22} />, key: 'home' },
-    { link: '/about', label: 'About', key: 'about' },
-    { link: '/work', label: 'Work', key: 'work' },
+    { link: '/', icon: <FaHome className={classes.icon} />, drawerLabel: 'Home', key: 'home' },
+    { link: '/about', icon: <FaUserCircle className={classes.icon} />, label: 'About', key: 'about' },
+    { link: '/work', icon: <FaDraftingCompass className={classes.icon} />, label: 'Work', key: 'work' },
 ];
 
 export default function HeaderSimple() {
@@ -28,9 +28,25 @@ export default function HeaderSimple() {
                 setActive(link.link);
             }}
         >
+            {link.icon}
             {link.label}
         </Link>
     ));
+
+    const drawerItems = links.map((link) => (
+        <Link
+            key={link.key}
+            href={link.link}
+            className={classes.link}
+            data-active={active === link.link || undefined}
+            onClick={() => {
+                setActive(link.link);
+            }}
+        >
+            {link.icon}
+            {link.drawerLabel || link.label}
+        </Link>
+    ))
 
     return (
         <header className={classes.header}>
@@ -43,19 +59,19 @@ export default function HeaderSimple() {
                         </Group>
                     </div>
                     <Group gap={5} visibleFrom="xs">
-                        {items.slice(1)}
-                    </Group>
-                    <Group gap={2} visibleFrom="xs">
                         {items[0]}
+                        <Divider size={1} orientation="vertical" />
+                        {items.slice(1)}
+                        <Divider size={1} orientation="vertical" />
                         <ThemeToggle />
                     </Group>
-                    <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" aria-label="Toggle navigation menu" />
+                    <div />
+                    <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="md" aria-label="Toggle navigation menu" />
                 </div>
-                <Drawer hiddenFrom="xs" position='right' size="25%" opened={opened} onClose={toggle} radius="md" overlayProps={{ backgroundOpacity: 0.5, blur: 4 }}>
+                <Drawer hiddenFrom="xs" position='right' size="40%" opened={opened} onClose={toggle} radius="md" overlayProps={{ backgroundOpacity: 0.5, blur: 4 }}>
                     <Stack gap={5} align='flex-start'>
-                        <ThemeToggle />
-                        {items[0]}
-                        {items.slice(1)}
+                        {drawerItems}
+                        <ThemeToggle className={classes.link}>Theme</ThemeToggle>
                     </Stack>
                 </Drawer>
             </Container>

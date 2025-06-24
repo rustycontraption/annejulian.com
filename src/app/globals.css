@@ -39,3 +39,9 @@ pre {
   /* Internet Explorer 5.5+ */
   word-wrap: break-word;
 }
+
+.icon {
+  width: 18px;
+  height: 18px;
+  color: var(--mantine-color-gray);
+}
