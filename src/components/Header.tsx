@@ -52,20 +52,22 @@ export default function HeaderSimple() {
         <header className={classes.header}>
             <Container fluid size="md">
                 <div className={classes.inner}>
-                    <div>
+                    <div className={classes.headerMargins}>
                         <Group gap={20} visibleFrom="xs">
                             <a href="https://github.com/rustycontraption/annejulian.com"><FaGithub size={22} /></a>
                             <a href="https://www.linkedin.com/in/annejulian/"><FaLinkedin size={22} /></a>
                         </Group>
                     </div>
-                    <Group gap={5} visibleFrom="xs">
-                        {items[0]}
-                        <Divider size={1} orientation="vertical" />
-                        {items.slice(1)}
-                        <Divider size={1} orientation="vertical" />
-                        <ThemeToggle />
-                    </Group>
-                    <div />
+                    <div>
+                        <Group gap={5} visibleFrom="xs">
+                            {items[0]}
+                            <Divider size={1} orientation="vertical" />
+                            {items.slice(1)}
+                            <Divider size={1} orientation="vertical" />
+                            <ThemeToggle className={classes.link} />
+                        </Group>
+                    </div>
+                    <div className={classes.headerMargins} />
                     <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="md" aria-label="Toggle navigation menu" />
                 </div>
                 <Drawer hiddenFrom="xs" position='right' size="40%" opened={opened} onClose={toggle} radius="md" overlayProps={{ backgroundOpacity: 0.5, blur: 4 }}>

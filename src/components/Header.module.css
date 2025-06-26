@@ -20,6 +20,11 @@
     z-index: -1;
 }
 
+.headerMargins {
+    display: flex;
+    width: 20%;
+}
+
 .inner {
     height: 56px;
     display: flex;
