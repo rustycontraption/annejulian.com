@@ -48,12 +48,14 @@ export default function RootLayout({
   return (
     <html lang="en" {...mantineHtmlProps}>
       <body
-        className={`${raleway.variable} ${geistMono.variable} antialiased`}
+        className={`${raleway.variable} antialiased`}
       >
         <ColorSchemeScript />
         <MantineProvider theme={theme} cssVariablesResolver={resolver}>
           <Header />
-          {children}
+          <div style={{ padding: '0% 5%' }}>
+            {children}
+          </div>
         </MantineProvider>
 
       </body>
