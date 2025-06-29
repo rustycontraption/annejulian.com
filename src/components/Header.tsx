@@ -7,6 +7,7 @@ import { useDisclosure } from '@mantine/hooks';
 import { FaHome, FaGithub, FaLinkedin, FaUserCircle, FaDraftingCompass } from 'react-icons/fa';
 import classes from './Header.module.css';
 import { ThemeToggle } from "../components/ThemeToggle";
+import SocialLinks from "../components/SocialLinks";
 
 const links = [
     { link: '/', icon: <FaHome className={classes.icon} />, drawerLabel: 'Home', key: 'home' },
@@ -53,10 +54,7 @@ export default function HeaderSimple() {
             <Container fluid size="md">
                 <div className={classes.inner}>
                     <div className={classes.headerMargins}>
-                        <Group gap={20} visibleFrom="xs">
-                            <a href="https://github.com/rustycontraption/annejulian.com"><FaGithub size={22} /></a>
-                            <a href="https://www.linkedin.com/in/annejulian/"><FaLinkedin size={22} /></a>
-                        </Group>
+                        <SocialLinks />
                     </div>
                     <div>
                         <Group gap={5} visibleFrom="xs">

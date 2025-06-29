@@ -2,6 +2,7 @@
 
 import { Raleway, Geist_Mono } from "next/font/google";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 import "./globals.css";
 // core styles are required for all packages
@@ -56,6 +57,7 @@ export default function RootLayout({
           <div style={{ padding: '0% 5%' }}>
             {children}
           </div>
+          <Footer />
         </MantineProvider>
 
       </body>
