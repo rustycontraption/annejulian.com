@@ -3,17 +3,15 @@ import React, { useRef, useState, useEffect } from 'react';
 export interface GridProps extends React.ComponentPropsWithoutRef<'svg'> {
     lineSpacingPx?: number;
     strokeWidth?: number;
-    strokeColor?: string;
 }
 
 export function GridLines({
     lineSpacingPx = 40,
     strokeWidth = 0.5,
-    strokeColor = "currentColor",
     ...others
 }: GridProps) {
 
-    const svgRef = useRef(null);
+    const svgRef = useRef<SVGSVGElement>(null);;
 
     const [containerWidth, setContainerWidth] = useState(0);
     const [containerHeight, setContainerHeight] = useState(0);
@@ -29,7 +27,7 @@ export function GridLines({
         updateDimensions();
 
         const resizeObserver = new ResizeObserver(entries => {
-            for (let entry of entries) {
+            for (const entry of entries) {
                 if (entry.target === svgRef.current) {
                     setContainerWidth(entry.contentRect.width);
                     setContainerHeight(entry.contentRect.height);
@@ -37,13 +35,14 @@ export function GridLines({
             }
         });
 
-        if (svgRef.current) {
-            resizeObserver.observe(svgRef.current);
+        const currentRef = svgRef.current;
+        if (currentRef) {
+            resizeObserver.observe(currentRef);
         }
 
         return () => {
-            if (svgRef.current) {
-                resizeObserver.unobserve(svgRef.current);
+            if (currentRef) {
+                resizeObserver.unobserve(currentRef);
                 resizeObserver.disconnect();
             }
         };

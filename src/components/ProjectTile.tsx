@@ -1,5 +1,6 @@
 import { Title } from "@mantine/core";
 import Link from "next/link";
+import Image from "next/image";
 import classes from "../components/ProjectTile.module.css";
 
 interface ProjectTileProps {
@@ -13,7 +14,7 @@ export default function ProjectTile({ tileImg, tileText, href }: ProjectTileProp
 
         <div className={classes.tileContainer}>
             <Link href={href}>
-                <img src={tileImg} className={classes.tileImg} />
+                <Image src={tileImg} className={classes.tileImg} alt={tileText} />
                 <Title className={classes.tileText}>{tileText}</Title>
             </Link>
         </div >
