@@ -2,6 +2,7 @@ import { Stack, Timeline } from "@mantine/core"
 import classes from "./ProjectTimeline.module.css"
 import { useRef, useState, useEffect, useCallback } from "react";
 import { ProjectLogItem } from "../resources/content";
+import Image from "next/image";
 
 interface ProjectItemProps {
     index: number;
@@ -38,7 +39,7 @@ export function ProjectItem({ index, log, onVisibilityChange }: ProjectItemProps
     return (
         <Stack ref={itemRef} className={classes.logItem}>
             <pre>{log.text}</pre>
-            <img src={log.img} className={classes.img} />
+            {log.img && <Image src={log.img} className={classes.img} alt={log.text} />}
         </Stack>
     );
 }

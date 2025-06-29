@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link'
 import { Burger, Container, Drawer, Group, Stack, Divider } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { FaHome, FaGithub, FaLinkedin, FaUserCircle, FaDraftingCompass } from 'react-icons/fa';
+import { FaHome, FaUserCircle, FaDraftingCompass } from 'react-icons/fa';
 import classes from './Header.module.css';
 import { ThemeToggle } from "../components/ThemeToggle";
 import SocialLinks from "../components/SocialLinks";

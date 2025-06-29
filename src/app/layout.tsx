@@ -1,6 +1,6 @@
 'use client';
 
-import { Raleway, Geist_Mono } from "next/font/google";
+import { Raleway } from "next/font/google";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
@@ -15,10 +15,6 @@ const raleway = Raleway({
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 const theme = createTheme({
   primaryColor: "gray",

@@ -1,6 +1,6 @@
 import { FaMoon, FaSun } from "react-icons/fa";
 import cx from 'clsx';
-import { ActionIcon, useComputedColorScheme, useMantineColorScheme } from '@mantine/core';
+import { useComputedColorScheme, useMantineColorScheme } from '@mantine/core';
 import classes from './ThemeToggle.module.css';
 import Link from 'next/link'
 
