@@ -1,5 +1,9 @@
 .timeline {
     width: 50%;
+
+    @media (max-width: $mantine-breakpoint-sm) {
+        width: auto;
+    }
 }
 
 .timeline :global(.mantine-Timeline-itemBullet) {
@@ -9,9 +13,9 @@
 .logItem {
     display: flex;
     padding-bottom: 10rem;
+    min-width: 300px;
 }
 
 .img {
     border-radius: var(--mantine-radius-md);
-    aspect-ratio: "1/1";
 }

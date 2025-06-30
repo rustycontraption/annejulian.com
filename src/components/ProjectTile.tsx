@@ -11,10 +11,9 @@ interface ProjectTileProps {
 
 export default function ProjectTile({ tileImg, tileText, href }: ProjectTileProps) {
     return (
-
         <div className={classes.tileContainer}>
             <Link href={href}>
-                <Image src={tileImg} className={classes.tileImg} alt={tileText} />
+                <Image src={tileImg} className={classes.tileImg} alt={tileText} fill={true} />
                 <Title className={classes.tileText}>{tileText}</Title>
             </Link>
         </div >
