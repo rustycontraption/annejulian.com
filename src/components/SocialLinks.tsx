@@ -6,7 +6,7 @@ export default function SocialLinks() {
         <Group gap={20} visibleFrom="xs">
             <a href="https://github.com/rustycontraption/annejulian.com"><FaGithub size={22} /></a>
             <a href="https://www.linkedin.com/in/annejulian/"><FaLinkedin size={22} /></a>
-            {/* <a href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}><FaEnvelope size={22} /></a> */}
+            <a href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}><FaEnvelope size={22} /></a>
         </Group>
     )
 }
