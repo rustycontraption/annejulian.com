@@ -1,4 +1,4 @@
-const urlPrefix = "https://static.annejulian.net/static/img/";
+const urlPrefix = "https://d2l2tjqqxralki.cloudfront.net/img/";
 
 export interface ProjectLogItem {
     text: string;
@@ -127,12 +127,12 @@ Motors: Brotherhobby returner r5 x3 and DYS SE Pro 2205 x1,
         {
             text: "ELRS and VTX antenna mount",
             img: `${urlPrefix}drone/antenna.webp`,
-            model: ``
+            model: `${urlPrefix}drone/3d_antenna_mounts.webp`
         },
         {
             text: "Camera bumper",
             img: `${urlPrefix}drone/cam_bumper.webp`,
-            model: ``
+            model: `${urlPrefix}drone/3d_cam_guard.webp`
         },
         {
             text: "",
@@ -146,7 +146,8 @@ Motors: Brotherhobby returner r5 x3 and DYS SE Pro 2205 x1,
         },
         {
             text: "The back frame portion I cut off also had the rear fender mounts so I had to find a new way to mount the rear fender.  There were some existing tabs on the frame I could use but they were too far apart. I also had to relocate the fuse box.  I accomplished both by modeling and 3D printing this fuse box mount that mounts to the same frame tabs.",
-            img: `${urlPrefix}gs750/gs750_spacer_fusebox.webp`
+            img: `${urlPrefix}gs750/gs750_spacer_fusebox.webp`,
+            model: `${urlPrefix}gs750/3d_fusebox.webp`
         },
         {
             text: "I cut the tray from sheet metal and mounted it to the frame under the seat with zip ties.",
@@ -162,7 +163,8 @@ Motors: Brotherhobby returner r5 x3 and DYS SE Pro 2205 x1,
         },
         {
             text: "Sitting directly on the frame, the new seat vibrated so badly the bike was unridable.",
-            img: `${urlPrefix}gs750/standoffs.jpg`
+            img: `${urlPrefix}gs750/standoffs.webp`,
+            model: `${urlPrefix}gs750/3d_seat_standoff.webp`
         },
         {
             text: "The single front brake barely stopped by bike.  I swapped the entire front end with one from a similar model that had dual disc brakes.  Dual brakes necessitated replacing the front master cylinder with one that supported two hydraulic lines. ",
@@ -170,7 +172,8 @@ Motors: Brotherhobby returner r5 x3 and DYS SE Pro 2205 x1,
         },
         {
             text: "The rear turn signals are 3D printed with some standard little LED marker lights found on eBay.  The new rear shocks were necessary for ride quality and safety.  The leather grip tape on the tail hoop just looked nice.",
-            img: `${urlPrefix}gs750/gs750_taillight.webp`
+            img: `${urlPrefix}gs750/gs750_taillight.webp`,
+            model: `${urlPrefix}gs750/3d_turn_signals.webp`
         },
         {
             text: "Switching the handlebars to clip-ons meant they no longer cleared the gas tank.  I hammered in both sides of the tank to make room.",
@@ -178,6 +181,20 @@ Motors: Brotherhobby returner r5 x3 and DYS SE Pro 2205 x1,
         }
     ],
 }
+
+const about = [
+    {
+        text: "I was a thoughtful kid.",
+        img: null
+    }
+]
+
+const work = [
+    {
+        text: "I was a thoughtful kid.",
+        img: null
+    }
+]
 
 const projectTiles = [
     { link: '/rabbit', tileImg: "https://static.annejulian.net/static/img/rabbit/rabbit.png", tileText: "keep a 40 year old car alive", key: 'rabbit' },
@@ -187,4 +204,4 @@ const projectTiles = [
     { link: '/gs750', tileImg: "https://static.annejulian.net/static/img/gs750/hero.webp", tileText: "build a custom motorcycle", key: 'gs750' }
 ];
 
-export { projectTiles, projectContent }; 
+export { urlPrefix, projectTiles, projectContent, about, work }; 

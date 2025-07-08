@@ -41,6 +41,9 @@ export function ProjectItem({ index, log, onVisibilityChange }: ProjectItemProps
             <div className={classes.img}>
                 {log.img && <img src={log.img} className={classes.img} alt={log.text} />}
             </div>
+            <div className={classes.img}>
+                {log.model && <img src={log.model} className={classes.img} alt={log.text} />}
+            </div>
         </Stack >
     );
 }

@@ -1,6 +1,7 @@
 import { Container, Title } from '@mantine/core';
 import classes from './Hero.module.css';
 import { GridLines } from './GridBackground';
+import { urlPrefix } from "../resources/content"
 
 interface HeroProps {
     currentProject?: string;
@@ -26,10 +27,10 @@ export function Hero({ currentProject, isVideoHeader, title }: HeroProps) {
                         objectFit: 'cover',
                         borderRadius: 10
                     }}
-                    src={`https://static.annejulian.net/static/img/${currentProject}/videoBg.mp4`}
+                    src={`${urlPrefix}${currentProject}/videoBg.mp4`}
                 />
             ) : <>
-                <GridLines className={classes.gridlines} style={{ backgroundImage: `url(https://static.annejulian.net/static/img/${currentProject}/hero.webp)` }} />
+                <GridLines className={classes.gridlines} style={{ backgroundImage: `url(${urlPrefix}${currentProject}/hero.webp)` }} />
             </>
             }
             <Title className={classes.title}>
