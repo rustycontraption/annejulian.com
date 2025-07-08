@@ -1,3 +1,5 @@
+import { url } from "inspector";
+
 const urlPrefix = "https://d2l2tjqqxralki.cloudfront.net/img/";
 
 export interface ProjectLogItem {
@@ -197,11 +199,11 @@ const work = [
 ]
 
 const projectTiles = [
-    { link: '/rabbit', tileImg: "https://static.annejulian.net/static/img/rabbit/rabbit.png", tileText: "keep a 40 year old car alive", key: 'rabbit' },
-    { link: '/miniped', tileImg: "https://static.annejulian.net/static/img/miniped/mastminiped.jpg", tileText: "build a moped minibike", key: 'miniped' },
-    { link: '/dive', tileImg: "https://static.annejulian.net/static/img/dive/mastdive.jpg", tileText: "show the world the Salish Sea", key: 'dive' },
-    { link: '/drone', tileImg: "https://static.annejulian.net/static/img/drone/hero.webp", tileText: "learn to fly", key: 'drone' },
-    { link: '/gs750', tileImg: "https://static.annejulian.net/static/img/gs750/hero.webp", tileText: "build a custom motorcycle", key: 'gs750' }
+    { link: '/rabbit', tileImg: `${urlPrefix}rabbit/rabbit.png`, tileText: "keep a 40 year old car alive", key: 'rabbit' },
+    { link: '/miniped', tileImg: `${urlPrefix}miniped/mastminiped.jpg`, tileText: "build a moped minibike", key: 'miniped' },
+    { link: '/dive', tileImg: `${urlPrefix}dive/mastdive.jpg`, tileText: "show the world the Salish Sea", key: 'dive' },
+    { link: '/drone', tileImg: `${urlPrefix}drone/hero.webp`, tileText: "learn to fly", key: 'drone' },
+    { link: '/gs750', tileImg: `${urlPrefix}gs750/hero.webp`, tileText: "build a custom motorcycle", key: 'gs750' }
 ];
 
 export { urlPrefix, projectTiles, projectContent, about, work }; 
