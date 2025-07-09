@@ -76,7 +76,7 @@ export default function Contact() {
 
             {status === 'success' && (
                 <p style={{ color: 'green' }}>
-                    Success! Thanks for reaching out. I'll get back to you as soon as I can.
+                    Success! Thanks for reaching out.
                 </p>
             )}
             {status === 'error' && (
