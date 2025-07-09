@@ -1,4 +1,4 @@
-import { Container, Title } from "@mantine/core";
+import { Container } from "@mantine/core";
 import classes from "../../components/Page.module.css";
 import Contact from "../../components/Contact";
 
