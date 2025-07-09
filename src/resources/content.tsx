@@ -1,5 +1,3 @@
-import { url } from "inspector";
-
 const urlPrefix = "https://d2l2tjqqxralki.cloudfront.net/img/";
 
 export interface ProjectLogItem {
