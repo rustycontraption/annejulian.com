@@ -1,36 +1,44 @@
 'use client'
 
 import React, { useState } from 'react';
+import { Stack, Button, TextInput, Textarea, Group } from '@mantine/core';
+import { useForm, isEmail } from '@mantine/form';
+import classes from "../components/Contact.module.css";
+
 
 interface FormState {
-    name: string;
     email: string;
     message: string;
 }
 
-type SubmissionStatus = 'idle' | 'submitting' | 'success' | 'error';
-
 const initialFormState: FormState = {
-    name: '',
     email: '',
     message: '',
 };
+
+type SubmissionStatus = 'idle' | 'submitting' | 'success' | 'error';
 
 export default function Contact() {
     const [formState, setFormState] = useState<FormState>(initialFormState);
     const [status, setStatus] = useState<SubmissionStatus>('idle');
 
+    const form = useForm({
+        mode: 'controlled',
+        initialValues: initialFormState,
+        validate: {
+            email: isEmail('Invalid email'),
+        },
+    });
+
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { name, value } = event.target;
+        const { id, value } = event.target;
         setFormState(prevState => ({
             ...prevState,
-            [name]: value,
+            [id]: value,
         }));
     };
 
-
-    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
+    const handleSubmit = async () => {
         setStatus('submitting');
 
         try {
@@ -55,24 +63,34 @@ export default function Contact() {
         }
     };
 
-
     return (
-        <form onSubmit={handleSubmit} method="POST">
+        <form onSubmit={form.onSubmit(handleSubmit)} className={classes.form}>
+            <TextInput
+                id='email'
+                placeholder='email'
+                value={formState.email}
+                onChange={handleInputChange}
+                key={form.key('email')}
+                {...form.getInputProps('email')}
+                required
+                className={classes.input}
+            />
 
-            <label htmlFor="name">name</label>
-            <input id="name" name="name" type="text" value={formState.name} onChange={handleInputChange} />
-
-            <label htmlFor="emailAddress">email address</label>
-            <input id="emailAddress" name="email" type="email" value={formState.email} onChange={handleInputChange} />
-
-            <br />
-
-            <label htmlFor="message">message</label>
-            <textarea rows={5} id="message" name="message" value={formState.message} onChange={handleInputChange} />
-
-            <button type="submit" disabled={status === 'submitting'}>
-                {status === 'submitting' ? 'Submitting...' : 'Submit'}
-            </button>
+            <Textarea
+                mt="md"
+                rows={5}
+                id='message'
+                placeholder='message'
+                value={formState.message}
+                onChange={handleInputChange}
+                required
+                className={classes.input}
+            />
+            <Group justify="flex-start" mt="md">
+                <Button type="submit" disabled={status === 'submitting'}>
+                    {status === 'submitting' ? 'Submitting...' : 'Submit'}
+                </Button>
+            </Group>
 
             {status === 'success' && (
                 <p style={{ color: 'green' }}>
@@ -84,7 +102,6 @@ export default function Contact() {
                     Oops, something went wrong. Please try again later.
                 </p>
             )}
-
         </form>
     );
 }
