@@ -67,9 +67,9 @@ export default function Contact() {
                 id='email'
                 placeholder='email'
                 value={formState.email}
-                onChange={handleInputChange}
                 key={form.key('email')}
                 {...form.getInputProps('email')}
+                onChange={handleInputChange}
                 required
             />
 
