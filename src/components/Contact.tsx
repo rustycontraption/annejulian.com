@@ -1,10 +1,8 @@
 'use client'
 
 import React, { useState } from 'react';
-import { Stack, Button, TextInput, Textarea, Group } from '@mantine/core';
+import { Button, TextInput, Textarea, Group } from '@mantine/core';
 import { useForm, isEmail } from '@mantine/form';
-import classes from "../components/Contact.module.css";
-
 
 interface FormState {
     email: string;
