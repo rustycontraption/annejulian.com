@@ -62,7 +62,7 @@ export default function Contact() {
     };
 
     return (
-        <form onSubmit={form.onSubmit(handleSubmit)} className={classes.form}>
+        <form onSubmit={form.onSubmit(handleSubmit)}>
             <TextInput
                 id='email'
                 placeholder='email'
@@ -71,7 +71,6 @@ export default function Contact() {
                 key={form.key('email')}
                 {...form.getInputProps('email')}
                 required
-                className={classes.input}
             />
 
             <Textarea
@@ -82,7 +81,6 @@ export default function Contact() {
                 value={formState.message}
                 onChange={handleInputChange}
                 required
-                className={classes.input}
             />
             <Group justify="flex-start" mt="md">
                 <Button type="submit" disabled={status === 'submitting'}>
