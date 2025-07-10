@@ -1,48 +1,35 @@
 'use client'
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Button, TextInput, Textarea, Group } from '@mantine/core';
 import { useForm, isEmail } from '@mantine/form';
+import classes from "../components/Contact.module.css"
 
-interface FormState {
+type SubmissionStatus = 'idle' | 'submitting' | 'success' | 'error';
+
+interface formValues {
     email: string;
     message: string;
 }
 
-const initialFormState: FormState = {
-    email: '',
-    message: '',
-};
-
-type SubmissionStatus = 'idle' | 'submitting' | 'success' | 'error';
-
 export default function Contact() {
-    const [formState, setFormState] = useState<FormState>(initialFormState);
-    const [status, setStatus] = useState<SubmissionStatus>('idle');
-
     const form = useForm({
         mode: 'controlled',
-        initialValues: initialFormState,
+        initialValues: { email: '', message: '' },
         validate: {
             email: isEmail('Invalid email'),
         },
     });
 
-    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { id, value } = event.target;
-        setFormState(prevState => ({
-            ...prevState,
-            [id]: value,
-        }));
-    };
+    const [status, setStatus] = useState<SubmissionStatus>('idle');
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (values: formValues) => {
         setStatus('submitting');
 
         try {
             const response = await fetch(`/api/send_email`, {
                 method: "POST",
-                body: JSON.stringify(formState),
+                body: JSON.stringify(values),
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
@@ -54,31 +41,29 @@ export default function Contact() {
             };
 
             setStatus('success');
-            setFormState(initialFormState);
+            form.reset();
         } catch (error) {
             console.error("Form submission error", error);
             setStatus('error');
         }
     };
 
-    return (
+    return status === 'success' ? (
+        <div className={classes.success}>
+            Success! Thanks for reaching out.
+        </div>
+    ) : (
         <form onSubmit={form.onSubmit(handleSubmit)}>
             <TextInput
-                id='email'
                 placeholder='email'
-                value={formState.email}
-                key={form.key('email')}
-                {... { onChange: handleInputChange, ...form.getInputProps('email') }}
+                {...form.getInputProps('email')}
                 required
             />
-
             <Textarea
                 mt="md"
                 rows={5}
-                id='message'
                 placeholder='message'
-                value={formState.message}
-                onChange={handleInputChange}
+                {...form.getInputProps('message')}
                 required
             />
             <Group justify="flex-start" mt="md">
@@ -87,11 +72,6 @@ export default function Contact() {
                 </Button>
             </Group>
 
-            {status === 'success' && (
-                <p style={{ color: 'green' }}>
-                    Success! Thanks for reaching out.
-                </p>
-            )}
             {status === 'error' && (
                 <p style={{ color: 'red' }}>
                     Oops, something went wrong. Please try again later.

@@ -8,7 +8,14 @@ export default function SocialLinks() {
 
     return (
         <>
-            <Modal opened={opened} onClose={close} overlayProps={{ backgroundOpacity: 0.5, blur: 4 }}>
+            <Modal
+                opened={opened}
+                onClose={close}
+                overlayProps={{ backgroundOpacity: 0.5, blur: 4 }}
+                styles={{
+                    body: { height: '20rem' }
+                }}
+            >
                 <Contact />
             </Modal>
 
