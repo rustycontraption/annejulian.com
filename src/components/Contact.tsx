@@ -37,13 +37,14 @@ export default function Contact() {
             });
 
             if (!response.ok) {
-                throw new Error(`${response.status}${response.body}`)
+                const errorText = await response.text();
+                throw new Error(`${response.status}: ${errorText}`)
             };
 
             setStatus('success');
             form.reset();
         } catch (error) {
-            console.error("Form submission error", error);
+            console.error("Form submission error: ", error);
             setStatus('error');
         }
     };
