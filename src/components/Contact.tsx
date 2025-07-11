@@ -37,7 +37,7 @@ export default function Contact() {
             });
 
             if (!response.ok) {
-                throw new Error(`HTTP error: ${response.status}`)
+                throw new Error(`${response.status}${response.body}`)
             };
 
             setStatus('success');
