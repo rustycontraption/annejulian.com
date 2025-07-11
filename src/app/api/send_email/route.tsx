@@ -20,7 +20,7 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({ success: true });
     } catch (error) {
         console.error('Error publishing to SNS:', error);
-        return NextResponse.json({ success: false, error: 'Failed to send email' }, { status: 500 });
+        return NextResponse.json({ success: false, error: { error } }, { status: 500 });
     }
 }
 
