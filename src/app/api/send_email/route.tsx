@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { SNSClient, PublishCommand } from '@aws-sdk/client-sns';
+import { SNSClient, PublishCommand, SNSServiceException } from '@aws-sdk/client-sns';
 
 const snsClient = new SNSClient({
     region: 'us-west-2',
@@ -15,12 +15,14 @@ export async function POST(req: NextRequest) {
 
     try {
         const command = new PublishCommand(params);
-        await snsClient.send(command);
+        const response = await snsClient.send(command);
 
-        return NextResponse.json({ success: true });
+        return NextResponse.json({ status: response.$metadata.httpStatusCode });
     } catch (error) {
-        console.error('Error publishing to SNS:', error);
-        return NextResponse.json({ success: false, error: { error } }, { status: 500 });
+        if (error instanceof SNSServiceException) {
+            return NextResponse.json({ error: error.message }, { status: error.$metadata.httpStatusCode });
+        }
+        return NextResponse.json({ error: error }, { status: 500 });
     }
 }
 
