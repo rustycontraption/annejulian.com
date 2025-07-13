@@ -32,6 +32,7 @@ export default function Contact() {
             setStatus('success');
             form.reset();
         } catch (error) {
+            console.log(error)
             setStatus('error');
         }
     };
