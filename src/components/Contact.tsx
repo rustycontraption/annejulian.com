@@ -3,21 +3,22 @@
 import { useState } from 'react';
 import { Button, TextInput, Textarea, Group } from '@mantine/core';
 import { useForm, isEmail } from '@mantine/form';
-import classes from "../components/Contact.module.css"
+import classes from "./Contact.module.css"
+import PubSNS from "../app/actions";
 
 type SubmissionStatus = 'idle' | 'submitting' | 'success' | 'error';
 
-interface formValues {
-    email: string;
+export interface formValues {
+    fromEmail: string;
     message: string;
 }
 
 export default function Contact() {
     const form = useForm({
         mode: 'controlled',
-        initialValues: { email: '', message: '' },
+        initialValues: { fromEmail: '', message: '' },
         validate: {
-            email: isEmail('Invalid email'),
+            fromEmail: isEmail('Invalid email'),
         },
     });
 
@@ -27,20 +28,7 @@ export default function Contact() {
         setStatus('submitting');
 
         try {
-            const response = await fetch(`/api/send_email`, {
-                method: "POST",
-                body: JSON.stringify(values),
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-            });
-
-            if (!response.ok) {
-                const errorText = await response.text();
-                throw new Error(`${response.status}: ${errorText}`)
-            };
-
+            await PubSNS(values);
             setStatus('success');
             form.reset();
         } catch (error) {
@@ -57,7 +45,7 @@ export default function Contact() {
         <form onSubmit={form.onSubmit(handleSubmit)}>
             <TextInput
                 placeholder='email'
-                {...form.getInputProps('email')}
+                {...form.getInputProps('fromEmail')}
                 required
             />
             <Textarea
