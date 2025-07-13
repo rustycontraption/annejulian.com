@@ -26,9 +26,10 @@ export default async function PubSNS({ fromEmail, message }: SNSProps) {
         return response.$metadata.httpStatusCode;
     } catch (error) {
         if (error instanceof SNSServiceException) {
-            console.error(error.message);
-            throw new Error(`${error.name}`);
+            console.error(error.name, error.message);
+        } else {
+            console.error(error);
         }
-        throw new Error(`Failed to send message.  Try again later.`);
+        throw new Error(`Failed to send message.  Please try again later, and hopefully I've fixed it by then.`);
     }
 }
