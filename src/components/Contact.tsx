@@ -28,7 +28,10 @@ export default function Contact() {
         setStatus('submitting');
 
         try {
-            await PubSNS(values);
+            const response = await PubSNS(values);
+            if (response.error) {
+                console.log(response.error)
+            }
             setStatus('success');
             form.reset();
         } catch (error) {

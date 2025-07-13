@@ -19,17 +19,16 @@ export default async function PubSNS({ fromEmail, message }: SNSProps) {
         TopicArn: process.env.CONTACT_TOPIC_ARN!,
     };
 
-
     try {
         const command = new PublishCommand(params);
         const response = await snsClient.send(command);
-        return response.$metadata.httpStatusCode;
+        return { httpStatusCode: response.$metadata.httpStatusCode };
     } catch (error) {
         if (error instanceof SNSServiceException) {
-            console.error(error.name, error.message);
-        } else {
-            console.error(error);
+            return { error: error.name };
         }
-        throw new Error(`Failed to send message.  Please try again later, and hopefully I've fixed it by then.`);
+
+        return { error: error };
+
     }
 }
