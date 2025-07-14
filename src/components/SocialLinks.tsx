@@ -1,12 +1,30 @@
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
-import { Group } from "@mantine/core";
+import { Group, Modal } from "@mantine/core";
+import { useDisclosure, useMediaQuery } from '@mantine/hooks';
+import Contact from "../components/Contact"
 
 export default function SocialLinks() {
+    const [opened, { open, close }] = useDisclosure(false);
+
     return (
-        <Group gap={20} visibleFrom="xs">
-            <a href="https://github.com/rustycontraption/annejulian.com"><FaGithub size={22} /></a>
-            <a href="https://www.linkedin.com/in/annejulian/"><FaLinkedin size={22} /></a>
-            <a href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}><FaEnvelope size={22} /></a>
-        </Group>
+        <>
+            <Modal
+                opened={opened}
+                onClose={close}
+                fullScreen={useMediaQuery('(max-width: 50em)')}
+                overlayProps={{ backgroundOpacity: 0.5, blur: 4 }}
+                styles={{
+                    body: { height: '20rem' }
+                }}
+            >
+                <Contact />
+            </Modal>
+
+            <Group gap={20} wrap={"nowrap"}>
+                <a href="https://github.com/rustycontraption/annejulian.com"><FaGithub size={22} /></a>
+                <a href="https://www.linkedin.com/in/annejulian/"><FaLinkedin size={22} /></a>
+                <button onClick={open}><FaEnvelope size={22} /></button>
+            </Group>
+        </>
     )
 }
