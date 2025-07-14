@@ -30,12 +30,12 @@ export default function Contact() {
         try {
             const response = await PubSNS(values);
             if (response.error) {
-                console.log(response.error)
+                throw new Error(`${response.error}`);
             }
             setStatus('success');
             form.reset();
         } catch (error) {
-            console.log(error)
+            console.error(error)
             setStatus('error');
         }
     };
