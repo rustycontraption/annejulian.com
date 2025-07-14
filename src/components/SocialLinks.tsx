@@ -23,7 +23,7 @@ export default function SocialLinks() {
             <Group gap={20} wrap={"nowrap"}>
                 <a href="https://github.com/rustycontraption/annejulian.com"><FaGithub size={22} /></a>
                 <a href="https://www.linkedin.com/in/annejulian/"><FaLinkedin size={22} /></a>
-                <a href="#" onClick={open}><FaEnvelope size={22} /></a>
+                <button onClick={open}><FaEnvelope size={22} /></button>
             </Group>
         </>
     )
