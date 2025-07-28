@@ -1,10 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
-import { Title } from '@mantine/core';
 import { Canvas } from '@react-three/fiber';
 import { Text } from '@react-three/drei';
 import { EffectComposer, Glitch } from '@react-three/postprocessing';
 import { Vector2 } from 'three';
-import { GlitchMode } from 'postprocessing';
 
 interface GlitchyTextProps {
     words: string[];
@@ -21,13 +19,16 @@ export default function GlitchyText({ words }: GlitchyTextProps) {
 
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const [containerWidth, setContainerWidth] = useState(0);
+    const [containerHeight, setContainerHeight] = useState(0);
+    const [windowWidth, setWindowWidth] = useState(0);
 
     useEffect(() => {
         const updateDimensions = () => {
             if (canvasRef.current) {
                 setContainerWidth(canvasRef.current.clientWidth);
+                setContainerHeight(canvasRef.current.clientHeight);
+                setWindowWidth(window.innerWidth);
             }
-            console.log(canvasRef.current);
         };
 
         updateDimensions();
@@ -36,6 +37,8 @@ export default function GlitchyText({ words }: GlitchyTextProps) {
             for (const entry of entries) {
                 if (entry.target === canvasRef.current) {
                     setContainerWidth(entry.contentRect.width);
+                    setContainerHeight(entry.contentRect.height);
+                    setWindowWidth(window.innerWidth);
                 }
             }
         });
@@ -75,28 +78,26 @@ export default function GlitchyText({ words }: GlitchyTextProps) {
     }, [words]);
 
     const currentWord = words.length > 0 ? words[currentWordIndex] : '';
+
     return (
-        <Canvas orthographic camera={{ zoom: 1 }} ref={canvasRef} style={{
-            position: "relative",
-            display: "flex",
-            background: "red",
-        }}>
+        <Canvas orthographic camera={{ zoom: 1 }} ref={canvasRef}>
             <Text
-                fontSize={40}
+                fontSize={windowWidth < 576 ? 28 : 40}
                 fontWeight={800}
                 color="white"
                 anchorX="left"
-                anchorY="middle"
-                position={[-(containerWidth / 2), 0, 0]}
+                anchorY="top"
+                position={[-(containerWidth / 2), (containerHeight / 2), 0]}
                 key={currentWord}
                 textAlign='left'
+                maxWidth={containerWidth}
+                overflowWrap='break-word'
             >
                 {currentWord}
             </Text>
             <EffectComposer>
                 <Glitch
                     strength={new Vector2(0.05, 0.1)}
-                    mode={GlitchMode.CONSTANT_WILD}
                     active={active}
                     ratio={0.85}
                 />

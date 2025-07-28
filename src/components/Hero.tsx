@@ -1,4 +1,4 @@
-import { Container, Title } from '@mantine/core';
+import { Container } from '@mantine/core';
 import classes from './Hero.module.css';
 import { GridLines } from './GridBackground';
 import { urlPrefix } from "../resources/content"
@@ -6,10 +6,10 @@ import { urlPrefix } from "../resources/content"
 interface HeroProps {
     currentProject?: string;
     isVideoHeader?: boolean;
-    title?: string;
+    children?: React.ReactNode;
 }
 
-export function Hero({ currentProject, isVideoHeader, title }: HeroProps) {
+export function Hero({ currentProject, isVideoHeader, children }: HeroProps) {
     return (
         <Container className={classes.wrapper} size="xl">
             {isVideoHeader ? (
@@ -33,9 +33,7 @@ export function Hero({ currentProject, isVideoHeader, title }: HeroProps) {
                 <GridLines className={classes.gridlines} style={{ backgroundImage: `url(${urlPrefix}${currentProject}/hero.webp)` }} />
             </>
             }
-            <Title className={classes.title}>
-                <pre>{title}</pre>
-            </Title>
+            {children}
         </Container>
     );
 }

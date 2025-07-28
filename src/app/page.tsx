@@ -1,11 +1,9 @@
 'use client'
 
-import { Container } from "@mantine/core";
+import { Container, Title } from "@mantine/core";
 import ProjectTile from "../components/ProjectTile";
 import { Hero } from "../components/Hero";
-
 import classes from "../components/Page.module.css";
-
 import { projectTiles } from "../resources/content";
 
 
@@ -18,18 +16,21 @@ const projects = projectTiles.map((tile) => (
   />
 ));
 
-const heroTitle = `Hi 
-My name is Annie, and I solve problems.`
-
 export default function Home() {
 
   return (
     <div>
-      <Hero title={heroTitle} />
+      <Hero>
+        <Title className={classes.title}>
+          <pre>{`Hi! 
+My name is Annie, and I solve problems.`}
+          </pre>
+        </Title>
+      </Hero>
       <div style={{ height: 50 }}></div>
       <Container className={classes.content} size="xl">
         {projects}
       </Container>
-    </div>
+    </div >
   );
 }

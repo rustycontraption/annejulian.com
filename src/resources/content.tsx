@@ -182,12 +182,19 @@ Motors: Brotherhobby returner r5 x3 and DYS SE Pro 2205 x1,
     ],
 }
 
-const about = [
-    {
-        text: "I was a thoughtful kid.",
-        img: null
-    }
-]
+const about = {
+    words: [
+        "a systems architect",
+        "an artist",
+        "a software engineer",
+        "a disruptor",
+        "a mechanic",
+        "a wanderer"
+    ],
+    entries: [
+        {},
+    ]
+}
 
 const work = [
     {
