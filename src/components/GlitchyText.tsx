@@ -3,6 +3,7 @@ import { Canvas } from '@react-three/fiber';
 import { Text } from '@react-three/drei';
 import { EffectComposer, Glitch } from '@react-three/postprocessing';
 import { Vector2 } from 'three';
+import { useMantineColorScheme } from '@mantine/core';
 
 interface GlitchyTextProps {
     words: string[];
@@ -78,13 +79,15 @@ export default function GlitchyText({ words }: GlitchyTextProps) {
     }, [words]);
 
     const currentWord = words.length > 0 ? words[currentWordIndex] : '';
+    const theme = useMantineColorScheme();
+    const fontColor = theme.colorScheme === 'dark' ? '#ffffff' : '#000000';
 
     return (
         <Canvas orthographic camera={{ zoom: 1 }} ref={canvasRef}>
             <Text
                 fontSize={windowWidth < 576 ? 28 : 40}
                 fontWeight={800}
-                color="white"
+                color={fontColor}
                 anchorX="left"
                 anchorY="top"
                 position={[-(containerWidth / 2), (containerHeight / 2), 0]}

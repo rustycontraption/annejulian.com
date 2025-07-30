@@ -7,9 +7,11 @@ import AboutSection from "@/components/AboutSection";
 import classes from "@/components/Page.module.css";
 import { about } from "@/resources/content";
 
+const items = about.entries.map((entry) => (
+    <AboutSection key={entry.title} title={entry.title} text={entry.text} img={entry.img} />
+));
 
 export default function About() {
-    console.log(about.words)
     return (
         <div>
             <Hero>
@@ -22,7 +24,7 @@ export default function About() {
             </Hero>
             <div style={{ height: 50 }}></div>
             <Container className={classes.content} size="xl">
-                <AboutSection />
+                {items}
             </Container>
         </div>
     )
