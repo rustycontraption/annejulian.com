@@ -45,3 +45,11 @@ pre {
   height: 18px;
   color: var(--mantine-color-gray);
 }
+
+button:hover {
+  color: var(--mantine-color-hover);
+}
+
+a:hover {
+  color: var(--mantine-color-hover);
+}
