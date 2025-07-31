@@ -1,8 +1,7 @@
 .header {
     height: 56px;
     background-color: transparent;
-    backdrop-filter: blur(5rem);
-    color: var(--mantine-color-gray);
+    backdrop-filter: blur(1rem);
     position: sticky;
     top: 0;
     z-index: 100;

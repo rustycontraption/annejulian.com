@@ -19,24 +19,23 @@ const raleway = Raleway({
 const theme = createTheme({
   primaryColor: "gray",
   primaryShade: { light: 8, dark: 4 },
-  other: {
-    // define custom colors here
-  }
 });
 
 const resolver: CSSVariablesResolver = (theme) => ({
   variables: {},
   light: {
-    '--mantine-color-gray': theme.colors.gray[8],
-    '--mantine-color-body': theme.colors.gray[0],
-    '--background-color': theme.colors.gray[4],
-    '--mantine-color-secondary': theme.colors.gray[4],
+    '--mantine-color-gray': theme.colors.dark[8],
+    '--mantine-color-body': '#fffcf5',
+    '--background-color': theme.colors.dark[2],
+    '--mantine-color-secondary': '#e1dacc',
+    '--mantine-color-hover': theme.colors.teal[4],
   },
   dark: {
     '--mantine-color-gray': theme.colors.gray[4],
     '--mantine-color-body': theme.colors.dark[9],
     '--background-color': theme.colors.dark[4],
     '--mantine-color-secondary': theme.colors.dark[5],
+    '--mantine-color-hover': theme.colors.pink[8],
   },
 });
 
@@ -53,12 +52,11 @@ export default function RootLayout({
         <ColorSchemeScript />
         <MantineProvider theme={theme} cssVariablesResolver={resolver}>
           <Header />
-          <div style={{ padding: '0% 5%' }}>
+          <div style={{ padding: '2% 5%' }}>
             {children}
           </div>
           <Footer />
         </MantineProvider>
-
       </body>
     </html>
   );
