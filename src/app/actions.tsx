@@ -18,7 +18,7 @@ export interface SNSProps {
 }
 
 export default async function PubSNS({ fromEmail, message }: SNSProps) {
-    if (!process.env.CONTACT_TOPIC_ARN) {
+    if (!process.env.NEXT_PUBLIC_CONTACT_TOPIC_ARN) {
         console.error('CONTACT_TOPIC_ARN environment variable is not set.');
         return { error: "Server configuration error. Unable to send message." };
     }
