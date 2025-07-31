@@ -26,21 +26,3 @@
     background-size: cover;
     background-position: center center;
 }
-
-.title {
-    text-align: left;
-    font-weight: 800;
-    font-size: 40px;
-    color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
-    padding: 0% 5%;
-    position: relative;
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-
-    @media (max-width: $mantine-breakpoint-xs) {
-        font-size: 28px;
-        text-align: left;
-        padding: 2rem;
-    }
-}
