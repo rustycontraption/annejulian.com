@@ -28,12 +28,15 @@ const resolver: CSSVariablesResolver = (theme) => ({
   variables: {},
   light: {
     '--mantine-color-gray': theme.colors.gray[8],
+    '--mantine-color-body': theme.colors.gray[0],
     '--background-color': theme.colors.gray[4],
+    '--mantine-color-secondary': theme.colors.gray[4],
   },
   dark: {
     '--mantine-color-gray': theme.colors.gray[4],
     '--mantine-color-body': theme.colors.dark[9],
-    '--background-color': theme.colors.dark[4]
+    '--background-color': theme.colors.dark[4],
+    '--mantine-color-secondary': theme.colors.dark[5],
   },
 });
 
