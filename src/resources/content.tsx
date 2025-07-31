@@ -211,7 +211,7 @@ const about = {
         },
         {
             title: "Sailor",
-            text: "A sailboat is a sideways airplane half submerged in water - it has booms and sheets instead of flaps and ailerons, and without the fear of falling out of the sky it allows for a lot more chaos and shenanigans, even while gliding quietly through the water.  There's something about this unique combination of peace and chaos, self-sufficiency and complete reliance on nature, that draws a particular kind of person.  The community that exists around sailing, and living on sailboats in particular, is the first community I found that I felt I truly belonged in.",
+            text: "A sailboat is a sideways airplane half submerged in water - it has booms and sheets instead of flaps and ailerons, and without the fear of falling out of the sky it allows for a lot more chaos and shenanigans, even while gliding quietly along.  There's something about this unique combination of peace and chaos, self-sufficiency and complete reliance on nature, that draws a particular kind of person.  The community that exists around sailing, and living on sailboats in particular, is the first community I found that I felt I truly belonged in.",
             img: `${urlPrefix}about/sailor.webp`
         }
     ]
