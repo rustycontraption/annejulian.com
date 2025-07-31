@@ -18,10 +18,13 @@ export interface SNSProps {
 }
 
 export default async function PubSNS({ fromEmail, message }: SNSProps) {
+
     if (!process.env.NEXT_PUBLIC_CONTACT_TOPIC_ARN) {
         console.error('CONTACT_TOPIC_ARN environment variable is not set.');
         return { error: "Server configuration error. Unable to send message." };
     }
+
+    const CONTACT_TOPIC_ARN = process.env.NEXT_PUBLIC_CONTACT_TOPIC_ARN;
 
     const inputValidationResult = contactFormSchema.safeParse({ fromEmail, message });
     if (!inputValidationResult.success) {
@@ -32,7 +35,7 @@ export default async function PubSNS({ fromEmail, message }: SNSProps) {
 
     const params = {
         Message: messageBody,
-        TopicArn: process.env.CONTACT_TOPIC_ARN!,
+        TopicArn: CONTACT_TOPIC_ARN!,
     };
 
     try {
