@@ -8,7 +8,6 @@ import { about } from "@/resources/content";
 import Masonry from "@/components/Masonry";
 
 const items = about.masonry.map((entry) => (
-    // <AboutSection key={entry.title} title={entry.title} text={entry.text} img={entry.img} />
     <Masonry key={entry.title} text={entry.text} title={entry.title} images={entry.imgs} />
 ));
 

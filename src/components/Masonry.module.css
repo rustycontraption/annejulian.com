@@ -3,29 +3,47 @@
     overflow: hidden;
     border-radius: var(--mantine-radius-md);
     padding: 0px;
+
 }
 
 .column {
     display: flex;
     flex-direction: column;
     width: 100%;
+
+
 }
 
 .img {
     object-fit: cover;
     flex: 1;
     padding: .5rem;
+
+    @media (max-width: $mantine-breakpoint-xs) {
+        min-width: 50em;
+        overflow: hidden;
+    }
 }
 
-.aboutTitle {
+.aboutContentTitle {
     padding-bottom: 0.5em;
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: 0.02em;
 }
 
-.aboutText {
+.aboutContent {
     padding: 1.5em;
     font-size: 1.1rem;
     line-height: 1.7;
+
+    @media (max-width: $mantine-breakpoint-xs) {
+        position: absolute;
+        background: var(--mantine-color-body);
+        opacity: .75;
+        padding-right: 5em;
+        width: 100%;
+
+
+    }
 }
