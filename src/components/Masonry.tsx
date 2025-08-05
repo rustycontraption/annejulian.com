@@ -27,7 +27,7 @@ export default function Masonry({ images, text, title }: MasonryProps) {
     });
 
     const randomColumnIndex = Math.floor(Math.random() * 2);
-    const randomPosition = Math.floor(Math.random() * columns[randomColumnIndex].length);
+    // const randomPosition = Math.floor(Math.random() * columns[randomColumnIndex].length);
     const aboutText = <div key="about-text" className={classes.aboutText}>
         <Title className={classes.aboutTitle}>{title}</Title>
         <p>

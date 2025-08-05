@@ -3,14 +3,13 @@
 import { Hero } from "@/components/Hero";
 import { Container, Title, Grid } from "@mantine/core";
 import GlitchyText from "@/components/GlitchyText";
-import AboutSection from "@/components/AboutSection";
 import classes from "@/components/Page.module.css";
 import { about } from "@/resources/content";
 import Masonry from "@/components/Masonry";
 
 const items = about.masonry.map((entry) => (
     // <AboutSection key={entry.title} title={entry.title} text={entry.text} img={entry.img} />
-    <Masonry text={entry.text} title={entry.title} images={entry.imgs} />
+    <Masonry key={entry.title} text={entry.text} title={entry.title} images={entry.imgs} />
 ));
 
 export default function About() {
