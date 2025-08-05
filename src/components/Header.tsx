@@ -16,7 +16,7 @@ const links = [
 ];
 
 export default function HeaderSimple() {
-    const [opened, { toggle }] = useDisclosure(false);
+    const [opened, { close, toggle }] = useDisclosure(false);
     const [active, setActive] = useState(links[0].link);
 
     const items = links.map((link) => (
@@ -42,6 +42,7 @@ export default function HeaderSimple() {
             data-active={active === link.link || undefined}
             onClick={() => {
                 setActive(link.link);
+                close();
             }}
         >
             {link.icon}
@@ -71,7 +72,7 @@ export default function HeaderSimple() {
                 <Drawer hiddenFrom="xs" position='right' size="40%" opened={opened} onClose={toggle} radius="md" overlayProps={{ backgroundOpacity: 0.5, blur: 4 }}>
                     <Stack gap={5} align='flex-start'>
                         {drawerItems}
-                        <ThemeToggle className={classes.link}>Theme</ThemeToggle>
+                        <ThemeToggle onClose={close} className={classes.link}>Theme</ThemeToggle>
                     </Stack>
                 </Drawer>
             </Container>
