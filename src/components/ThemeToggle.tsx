@@ -7,9 +7,10 @@ import Link from 'next/link'
 interface ThemeToggleProps {
     children?: React.ReactNode;
     className?: string;
+    onClose?: () => void;
 }
 
-export function ThemeToggle({ children, className }: ThemeToggleProps) {
+export function ThemeToggle({ children, className, onClose }: ThemeToggleProps) {
     const { setColorScheme } = useMantineColorScheme();
 
     const computedColorScheme = useComputedColorScheme('light', { getInitialValueInEffect: true });
@@ -18,6 +19,7 @@ export function ThemeToggle({ children, className }: ThemeToggleProps) {
         <Link
             onClick={() => {
                 setColorScheme(computedColorScheme === 'light' ? 'dark' : 'light');
+                onClose?.();
             }}
             href={""}
             aria-label="Toggle color scheme"
