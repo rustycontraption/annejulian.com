@@ -182,6 +182,16 @@ Motors: Brotherhobby returner r5 x3 and DYS SE Pro 2205 x1,
     ],
 }
 
+export interface AboutImg {
+    src: string;
+    height: number;
+}
+
+export interface AboutItem {
+    title: string;
+    text: string;
+    imgs: string[];
+}
 const about = {
     words: [
         "a systems architect",
@@ -213,6 +223,37 @@ const about = {
             title: "Sailor",
             text: "A sailboat is a sideways airplane half submerged in water - it has booms and sheets instead of flaps and ailerons, and without the fear of falling out of the sky it allows for a lot more chaos and shenanigans, even while gliding quietly along.  There's something about this unique combination of peace and chaos, self-sufficiency and complete reliance on nature, that draws a particular kind of person.  The community that exists around sailing, and living on sailboats in particular, is the first community I found that I felt I truly belonged in.",
             img: `${urlPrefix}about/sailor.webp`
+        }
+    ],
+    masonry: [
+        {
+            title: "Liveaboard",
+            text: "I live on my small sailboat, afloat on the Salish Sea in the Pacific Northwest.  I own very little - mostly only what will fit in the boat - and I spend much of my free time on boat maintenance.  Living aboard is hard work and requires sacrificing many of the creature comforts modern society offers, but the tradeoff is worth it to me.",
+            imgs:
+                [`${urlPrefix}about/liveaboard/blakely_harbor.webp`,
+                `${urlPrefix}about/liveaboard/gaptooth.jpg`,
+                `${urlPrefix}about/liveaboard/july_raftup.webp`,
+                ]
+        },
+        {
+            title: "Wanderer",
+            text: "Spanish has two words for 'to know', one for knowing things and one for knowing people.  The word for knowing a person is also used for knowing a place - I really like that.  I want to meet places like new friends and get to know them.  Like getting to know anyone, that takes listening well, learning with an open mind, behaving with humility and respect, and patience.  To do that I think you need to wander a place and wait for it to come to you.",
+            imgs: [
+                `${urlPrefix}about/wanderer/romeria.webp`,
+                `${urlPrefix}about/wanderer/port_hardy.webp`,
+                `${urlPrefix}about/wanderer/rainbow_gathering.webp`,
+                `${urlPrefix}about/wanderer/bangkok_market.webp`,
+                `${urlPrefix}about/wanderer/ireland.webp`,
+            ]
+        },
+        {
+            title: "Artist",
+            text: "For reasons unknown to anyone, some people are imbued with the impulse to draw pictures - I imagine the satisfaction I got from drawing dragons as a kid is the same as whomever drew the buffalo in Lascaux 30,000 years ago.  When it came time to go to college I chose to study the arts, admitedly because I didn't think I could stand college long enough to get a degree if I studied anything else.  Now I mostly draw the places I go so that I remember them better.",
+            imgs: [
+                // `${urlPrefix}about/artist/kohtaowebp`,
+                // `${urlPrefix}about/artist/kohtaowebp`,
+                // `${urlPrefix}about/artist/kohtaowebp`,
+            ]
         }
     ]
 }
