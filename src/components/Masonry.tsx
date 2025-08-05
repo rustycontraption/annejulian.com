@@ -20,6 +20,7 @@ export default function Masonry({ images, text, title }: MasonryProps) {
             setIsMobile(window.innerWidth <= 576 ? 1 : 0);
         };
 
+        handleResize();
         setRandomColumnIndex(Math.floor(Math.random() * 2));
 
         window.addEventListener('resize', handleResize);
