@@ -1,5 +1,14 @@
 const urlPrefix = "https://d2l2tjqqxralki.cloudfront.net/img/";
 
+const projectTiles = [
+    { link: '/boat', tileImg: `${urlPrefix}boat/hero.webp`, tileText: "don't sink", key: 'boat' },
+    { link: '/rabbit', tileImg: `${urlPrefix}rabbit/rabbit.png`, tileText: "keep a 40 year old car alive", key: 'rabbit' },
+    { link: '/miniped', tileImg: `${urlPrefix}miniped/mastminiped.jpg`, tileText: "build a moped minibike", key: 'miniped' },
+    { link: '/dive', tileImg: `${urlPrefix}dive/mastdive.jpg`, tileText: "show the world the Salish Sea", key: 'dive' },
+    { link: '/drone', tileImg: `${urlPrefix}drone/hero.webp`, tileText: "learn to fly", key: 'drone' },
+    { link: '/gs750', tileImg: `${urlPrefix}gs750/hero.webp`, tileText: "build a custom motorcycle", key: 'gs750' }
+];
+
 export interface ProjectLogItem {
     text: string;
     img: string | null;
@@ -21,7 +30,7 @@ const projectContent: ProjectContent = {
             img: `${urlPrefix}rabbit/carb.webp`
         },
         {
-            text: "I fabricated this simple bracket to route the old throttle cable to the new carburator at the correct angle.",
+            text: "I fabricated this simple bracket to route the old throttle cable to the new carburetor at the correct angle.",
             img: `${urlPrefix}rabbit/throttlecable.webp`
         },
         {
@@ -43,7 +52,7 @@ const projectContent: ProjectContent = {
     ],
     miniped: [
         {
-            text: "Let's figure out how to put a Tomos moped motor in this chinese pitbike.",
+            text: "Let's figure out how to put a Tomos moped motor in this Chinese pitbike.",
             img: `${urlPrefix}miniped/pitbike.webp`
         },
         {
@@ -167,7 +176,7 @@ Motors: Brotherhobby returner r5 x3 and DYS SE Pro 2205 x1,
             model: `${urlPrefix}gs750/3d_seat_standoff.webp`
         },
         {
-            text: "The single front brake barely stopped by bike.  I swapped the entire front end with one from a similar model that had dual disc brakes.  Dual brakes necessitated replacing the front master cylinder with one that supported two hydraulic lines. ",
+            text: "The single front brake barely stopped my bike.  I swapped the entire front end with one from a similar model that had dual disc brakes.  Dual brakes necessitated replacing the front master cylinder with one that supported two hydraulic lines. ",
             img: `${urlPrefix}gs750/gs750_front_brake.webp`
         },
         {
@@ -179,6 +188,41 @@ Motors: Brotherhobby returner r5 x3 and DYS SE Pro 2205 x1,
             text: "Switching the handlebars to clip-ons meant they no longer cleared the gas tank.  I hammered in both sides of the tank to make room.",
             img: `${urlPrefix}gs750/gas_tank.webp`
         }
+    ],
+    boat: [
+
+        {
+            text: "Living aboard quickly taught me how to participate in, and rely on, a community.  I couldn't have gotten my old water heater out of its nook behind the engine if a friend hadn't offered to cut it apart with a Sawzall while it was still in the boat.",
+            img: `${urlPrefix}boat/water_heater_removal.webp`
+        },
+        {
+            text: "It took an entire afternoon and evening, a rented Sawzall, and several beers but they got it out!",
+            img: `${urlPrefix}boat/old_water_heater.webp`
+        },
+        {
+            text: "I used HDPE for a mount for the new water heater.  The only heater I could find that would fit through the access hatch was quite a bit smaller than the old one.",
+            img: `${urlPrefix}boat/waterheater.webp`
+        },
+        {
+            text: "I couldn't use my diesel cabin heater until I replaced the old copper pipe and brass fittings.  I filled the new pipe with sand to prevent it from collapsing when I bent it.  It took a few tries but I finally got it.",
+            img: `${urlPrefix}boat/stove_pipe.png`
+        },
+        {
+            text: "Many of the windows leaked.  Resealing them turned out to be one of the longest ongoing projects on the boat due to old sealant causing the gelcoat underneath to fail, broken aluminum frames that had to welded together or replaced, and half-done attempts by previous owners.  A few friends helped over the course a month to scrape and sand.",
+            img: `${urlPrefix}boat/window_scraping.webp`
+        },
+        {
+            text: "The old fresh water pump contained materials not safe for potable water, the diaphragm in the accumulator tank (not pictured) was disintegrating, and all the old hoses were brittle and gross.  I replaced the entire fresh water system, except for the tanks, which I treated with sanitizer.",
+            img: `${urlPrefix}boat/water_pump.webp`
+        },
+        {
+            text: "Most people don't have to remove their kitchen sink and cabinetry to work on their home's diesel tractor engine.",
+            img: `${urlPrefix}boat/engine_access.webp`
+        },
+        {
+            text: "The intentional holes in the hull, through-hulls, are a common cause of sinking when they fail.  A friend helped me cut out the old ones (inset) with a holesaw.  I glassed in new G10 backing plates to replace the wood ones and installed the new through-hulls with 3M sealant.",
+            img: `${urlPrefix}boat/thruhull_inset.webp`
+        },
     ],
 }
 
@@ -234,7 +278,7 @@ const about = {
         },
         {
             title: "Artist",
-            text: "For reasons unknown to anyone, some people are imbued with the impulse to draw pictures - I imagine the satisfaction I got from drawing dragons as a kid is the same as whomever drew the buffalo in Lascaux 30,000 years ago.  When it came time to go to college I chose to study the arts, admitedly because I didn't think I could stand college long enough to get a degree if I studied anything else.  Now I mostly draw the places I go so that I remember them better.",
+            text: "For reasons unknown to anyone, some people are imbued with the impulse to draw pictures - I imagine the satisfaction I got from drawing dragons as a kid is the same as whomever drew the buffalo in Lascaux 30,000 years ago.  When it came time to go to college I chose to study the arts, admittedly because I didn't think I could stand college long enough to get a degree if I studied anything else.  Now I mostly draw the places I go so that I remember them better.",
             imgs: [
                 `${urlPrefix}about/artist/bigsummit.webp`,
                 `${urlPrefix}about/artist/koh_tao.webp`,
@@ -253,13 +297,5 @@ const work = [
         img: null
     }
 ]
-
-const projectTiles = [
-    { link: '/rabbit', tileImg: `${urlPrefix}rabbit/rabbit.png`, tileText: "keep a 40 year old car alive", key: 'rabbit' },
-    { link: '/miniped', tileImg: `${urlPrefix}miniped/mastminiped.jpg`, tileText: "build a moped minibike", key: 'miniped' },
-    { link: '/dive', tileImg: `${urlPrefix}dive/mastdive.jpg`, tileText: "show the world the Salish Sea", key: 'dive' },
-    { link: '/drone', tileImg: `${urlPrefix}drone/hero.webp`, tileText: "learn to fly", key: 'drone' },
-    { link: '/gs750', tileImg: `${urlPrefix}gs750/hero.webp`, tileText: "build a custom motorcycle", key: 'gs750' }
-];
 
 export { urlPrefix, projectTiles, projectContent, about, work }; 
