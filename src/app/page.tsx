@@ -17,7 +17,6 @@ const projects = projectTiles.map((tile) => (
 ));
 
 export default function Home() {
-
   return (
     <div>
       <Hero>
