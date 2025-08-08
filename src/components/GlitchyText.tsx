@@ -10,8 +10,8 @@ interface GlitchyTextProps {
 }
 
 export default function GlitchyText({ words }: GlitchyTextProps) {
-    const minDelay = 1.5;
-    const maxDelay = 3.5;
+    const minDelay = 1;
+    const maxDelay = 2;
     const minDuration = 0.2;
     const maxDuration = 0.6;
 

@@ -7,11 +7,12 @@ interface HeroProps {
     currentProject?: string;
     isVideoHeader?: boolean;
     children?: React.ReactNode;
+    style?: React.CSSProperties;
 }
 
-export function Hero({ currentProject, isVideoHeader, children }: HeroProps) {
+export function Hero({ currentProject, isVideoHeader, children, style }: HeroProps) {
     return (
-        <Container className={classes.wrapper} size="xl">
+        <Container className={classes.wrapper} style={{ ...style }} size="xl">
             {isVideoHeader ? (
                 <video
                     autoPlay
