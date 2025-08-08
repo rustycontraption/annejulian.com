@@ -131,21 +131,25 @@ RX: Radiomaster XR1,
 PDB & ESCs: DYS 4in1,
 Motors: Brotherhobby returner r5 x3 and DYS SE Pro 2205 x1,
 `,
-            img: null
+            img: `${urlPrefix}drone/top.webp`
         },
         {
-            text: "ELRS and VTX antenna mount",
+            text: "The ELRS and VTX antenna mounts prevent the antennas from getting caught in the props.",
             img: `${urlPrefix}drone/antenna.webp`,
             model: `${urlPrefix}drone/3d_antenna_mounts.webp`
         },
         {
-            text: "Camera bumper",
+            text: "The camera bumpers prevent damage to the camera in the event of a head-on crash.",
             img: `${urlPrefix}drone/cam_bumper.webp`,
             model: `${urlPrefix}drone/3d_cam_guard.webp`
         },
         {
-            text: "",
-            img: `${urlPrefix}drone/top.webp`
+            text: "Getting all the electronic components to fit on the frame is the primary challenge in building a drone.",
+            img: `${urlPrefix}drone/electronics.webp`
+        },
+        {
+            text: "Soldering wires to compact boards can be tricky.",
+            img: `${urlPrefix}drone/soldering.webp`
         }
     ],
     gs750: [
