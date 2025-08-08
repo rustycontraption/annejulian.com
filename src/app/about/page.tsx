@@ -14,8 +14,8 @@ const items = about.masonry.map((entry) => (
 export default function About() {
     return (
         <div>
-            <Hero>
-                <Grid justify="center" align="top">
+            <Hero style={{ height: "50%" }}>
+                <Grid justify="center" align="top" >
                     <Grid.Col span={5}><Title className={classes.title} style={{ justifyContent: "right", padding: 0 }}>{`I am `}</Title></Grid.Col>
                     <Grid.Col span={7}>
                         <GlitchyText words={about.words} />
