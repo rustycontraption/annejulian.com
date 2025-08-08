@@ -2,10 +2,10 @@ const urlPrefix = "https://d2l2tjqqxralki.cloudfront.net/img/";
 
 const projectTiles = [
     { link: '/boat', tileImg: `${urlPrefix}boat/hero.webp`, tileText: "don't sink", key: 'boat' },
-    { link: '/rabbit', tileImg: `${urlPrefix}rabbit/rabbit.png`, tileText: "keep a 40 year old car alive", key: 'rabbit' },
-    { link: '/miniped', tileImg: `${urlPrefix}miniped/mastminiped.jpg`, tileText: "build a moped minibike", key: 'miniped' },
-    { link: '/dive', tileImg: `${urlPrefix}dive/mastdive.jpg`, tileText: "show the world the Salish Sea", key: 'dive' },
     { link: '/drone', tileImg: `${urlPrefix}drone/hero.webp`, tileText: "learn to fly", key: 'drone' },
+    { link: '/dive', tileImg: `${urlPrefix}dive/mastdive.jpg`, tileText: "show the world the Salish Sea", key: 'dive' },
+    { link: '/miniped', tileImg: `${urlPrefix}miniped/mastminiped.jpg`, tileText: "build a weird contraption", key: 'miniped' },
+    { link: '/rabbit', tileImg: `${urlPrefix}rabbit/rabbit.png`, tileText: "keep a 40 year old car alive", key: 'rabbit' },
     { link: '/gs750', tileImg: `${urlPrefix}gs750/hero.webp`, tileText: "build a custom motorcycle", key: 'gs750' }
 ];
 
