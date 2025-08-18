@@ -369,7 +369,7 @@ IT and A/V Support, 2013 - 2019`,
             text: "Provided nationwide on-site infrastructure support for Fortune 500 client events including Amazon and Salesforce conferences.  Managed mission-critical system deployments under tight SLA requirements.  Coordinated with diverse stakeholders including union workers, event planners, and venue management to ensure the system was installed and configured to all standards."
         },
         {
-            heading: "IT support at a college",
+            heading: "College IT support",
             roles: `IT Support Specialist, 2007 - 2011`,
             text: "Provided customer service and technical support for diverse creative technology stack including CAD workstations, 3D printers, and audio/video equipment.  Responsible for user lifecycle in the physical access control system (prox card)."
         }

@@ -8,9 +8,9 @@ interface WorkSectionProps {
 
 export default function WorkSection({ title, children }: WorkSectionProps) {
     return (
-        <Container className={classes.workWrapper} size="xl">
+        <Container size="xl" style={{ marginBottom: "3rem" }}>
+            <Title className={classes.workTitle}>{title}</Title>
             <div className={classes.workContent}>
-                <Title className={classes.workTitle}>{title}</Title>
                 {children}
             </div>
         </Container>

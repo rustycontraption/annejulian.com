@@ -20,10 +20,7 @@ export default function Work() {
             </Hero>
             <div style={{ height: 50 }}></div>
             <Container size="xl" style={{ padding: 0 }}>
-                <Title className={classes.title} style={{ justifyContent: "left", marginBottom: "1rem" }}>
-                    favorite projects
-                </Title>
-                <div className={classes.content}>
+                <WorkSection title="favorite projects">
                     {work.favorite_projects.map((item, index) => (
                         <div className={classes.tile} key={index}>
                             <Title className={classes.heading}>
@@ -32,17 +29,19 @@ export default function Work() {
                             {item.text}
                         </div>
                     ))}
-                </div>
+                </WorkSection>
                 <WorkSection title="professional summary">
-                    <ul className={classes.arrowList}>
-                        {work.prof_summary.map((item, index) => (
-                            <li key={index}>{item.text}</li>
-                        ))}
-                    </ul>
+                    <div className={classes.tile}>
+                        <ul className={classes.arrowList}>
+                            {work.prof_summary.map((item, index) => (
+                                <li key={index}>{item.text}</li>
+                            ))}
+                        </ul>
+                    </div>
                 </WorkSection>
                 <WorkSection title="work experience">
                     {work.work_experience.map((item, index) => (
-                        <div key={index} style={{ marginBottom: "2rem" }}>
+                        <div className={classes.tile} style={{ width: "100%" }} key={index}>
                             <Title className={classes.heading}>{item.heading}</Title>
                             <pre>{item.roles}</pre>
                             <br />

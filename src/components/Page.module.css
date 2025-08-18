@@ -60,7 +60,7 @@
 .tile {
     min-width: 300px;
     min-height: 300px;
-    width: 350px;
+    width: 400px;
     flex-grow: 1;
     position: relative;
     box-sizing: border-box;
