@@ -1,4 +1,4 @@
-import { Container, Group, Title } from "@mantine/core";
+import { Container, Title } from "@mantine/core";
 import classes from "./WorkSection.module.css";
 
 interface WorkSectionProps {
