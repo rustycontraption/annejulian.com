@@ -11,11 +11,11 @@ export default function Work() {
         <div>
             <Hero>
                 <Title className={classes.title}>
-                    <i>"The only phrase I've ever disliked is, `Why, we've always done it that way`"</i>
+                    <i>{`"The only phrase I've ever disliked is, 'Why, we've always done it that way'"`}</i>
                 </Title>
                 <br />
                 <Title className={classes.title} style={{ justifyContent: "right" }}>
-                    - Grace Hopper
+                    {`- Grace Hopper`}
                 </Title>
             </Hero>
             <div style={{ height: 50 }}></div>
