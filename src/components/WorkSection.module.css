@@ -1,0 +1,33 @@
+.workWrapper {
+    width: 100%;
+    padding: 3rem 0;
+    background: var(--mantine-color-secondary);
+    border-radius: 10px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+    transition: box-shadow 0.2s;
+    margin-bottom: 2rem;
+}
+
+.workTitle {
+    padding: 0% 5%;
+    font-weight: 800;
+    font-size: 40px;
+    color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: left;
+
+    @media (max-width: $mantine-breakpoint-xs) {
+        font-size: 28px;
+        padding: 2rem;
+    }
+}
+
+.workContent {
+    flex: 1;
+    padding: 1.5rem 5rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
