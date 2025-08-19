@@ -295,11 +295,85 @@ const about = {
     ]
 }
 
-const work = [
-    {
-        text: "",
-        img: null
-    }
-]
+const work = {
+    prof_summary: [
+        {
+            text: "DevOps Engineer and Software Developer with 10+ years of expertise in automated infrastructure and 4+ years in full-stack application development within AI research environments",
+            tags: ["devops", "software", "automation"]
+        },
+        {
+            text: "Demonstrated expertise in identifying latent challenges and opportunities for innovation within an organization, and delivering effective, impactful solutions",
+            tags: []
+        },
+        {
+            text: "Adept at driving the adoption of new technologies through collaboration, building consensus, and leading initiatives that create impactful results",
+            tags: []
+        },
+        {
+            text: "Expert in CI/CD pipelines, cloud architecture, and infrastructure as code with proven ability to reverse-engineer complex systems",
+            tags: []
+        },
+        {
+            text: "Strong background in system administration, regulatory compliance (FERPA), and cross-functional technical leadership across engineering, research, and non-technical teams",
+            tags: []
+        },
+        {
+            text: "Proficient in Python with hands-on experience in ReactJS, Golang, and Dart",
+            tags: []
+        },
+        {
+            text: "Personal experience designing and maintaining critical systems aboard a marine vessel where failure could result in loss of life, serious injury, or property loss over a million dollars in value",
+            tags: []
+        }
+    ],
+    favorite_projects: [
+        {
+            heading: "Identity management overhaul",
+            text: "Led a seamless transition from legacy LDAP to Okta for an entire organization, automating user lifecycle management and evolving the system from manual processes to a fully automated enterprise-grade solution."
+        },
+        {
+            heading: "SSH Key Management System",
+            text: "Designed and implemented a full-stack SSH key management system with a ReactJS frontend and Python backend, streamlining user access to compute resources and nearly eliminating IT overhead for SSH key issues."
+        },
+        {
+            heading: "Bringing modern features to a legacy CI/CD system",
+            text: "Reverse-engineered and documented a complex legacy CI/CD system for a high-traffic AI-driven platform, then built and integrated a new feature to deploy ephemeral development environments from Git branches."
+        },
+        {
+            heading: "Server Standardization",
+            text: " Automated and standardized 30+ on-prem GPU AI-research servers using Ansible, implementing role-based access control and reducing downtime by eliminating configuration drift."
+        },
+        {
+            heading: "Underwater Monitoring System",
+            text: "Engineered a fault-tolerant underwater video monitoring system for marine research, achieving 24/7 reliability under extreme environmental constraints with minimal budget."
+        }
+    ],
+    work_experience: [
+        {
+            heading: "Infrastructure engineer at an AI research non-profit",
+            roles: `Senior Infrastructure Engineer, 2024 - 2025
+Infrastructure Engineer 2, 2021 - 2024
+Information Technology Engineer 2, 2020 - 2021
+Information Technology Engineer, 2019 - 2020`,
+            text: "Developed full-stack web applications using ReactJS, Python, and Golang, with a focus on infrastructure automation. Led cross-functional initiatives to establish security compliance standards, implemented automated identity lifecycle management, and designed self-service systems to enhance productivity and security. Additionally, standardized infrastructure using Ansible, mentored junior staff, and provided technical expertise across teams to build innovative solutions and ensure data governance."
+        },
+        {
+            heading: "System administrator at a government-funded college",
+            roles: `System Administrator, 2014 - 2019
+IT and A/V Support, 2013 - 2019`,
+            text: "Specialized in developing and automating macOS infrastructure, including implementing CI/CD pipelines, an Apple MDM server, and scalable provisioning systems to enhance reliability and efficiency. Built and supported a novel 24/7 underwater livestream of the Puget Sound for the college's marine science department.  Delivered culturally sensitive IT support, saved $20,000 annually through staffing optimizations, and improved event technology reliability. Migrated documentation to the cloud, trained staff on Unix systems and other technologies, and collaborated with faculty to align IT standards with classroom needs. Ensured security compliance and established campus-wide macOS/iOS standards through analysis."
+        },
+        {
+            heading: "Contractor with an event registration and lead retrieval startup",
+            roles: `Field Systems Engineer, 2012 - 2013`,
+            text: "Provided nationwide on-site infrastructure support for Fortune 500 client events including Amazon and Salesforce conferences.  Managed mission-critical system deployments under tight SLA requirements.  Coordinated with diverse stakeholders including union workers, event planners, and venue management to ensure the system was installed and configured to all standards."
+        },
+        {
+            heading: "College IT support",
+            roles: `IT Support Specialist, 2007 - 2011`,
+            text: "Provided customer service and technical support for diverse creative technology stack including CAD workstations, 3D printers, and audio/video equipment.  Responsible for user lifecycle in the physical access control system (prox card)."
+        }
+    ]
+}
 
 export { urlPrefix, projectTiles, projectContent, about, work }; 
