@@ -11,7 +11,7 @@ import { createTheme, MantineProvider, CSSVariablesResolver, ColorSchemeScript, 
 
 
 const raleway = Raleway({
-  variable: "--font-geist-sans",
+  variable: "--font-raleway-sans",
   subsets: ["latin"],
 });
 
@@ -26,7 +26,8 @@ const resolver: CSSVariablesResolver = (theme) => ({
   light: {
     '--mantine-color-gray': theme.colors.dark[8],
     '--mantine-color-body': '#fffcf5',
-    '--background-color': theme.colors.dark[2],
+    '--background-color': theme.colors.dark[1],
+    '--foreground-color': theme.colors.dark[8],
     '--mantine-color-secondary': '#e1dacc',
     '--mantine-color-hover': theme.colors.teal[4],
   },
@@ -34,6 +35,7 @@ const resolver: CSSVariablesResolver = (theme) => ({
     '--mantine-color-gray': theme.colors.gray[4],
     '--mantine-color-body': theme.colors.dark[9],
     '--background-color': theme.colors.dark[4],
+    '--foreground-color': theme.colors.gray[4],
     '--mantine-color-secondary': theme.colors.dark[5],
     '--mantine-color-hover': theme.colors.pink[8],
   },
