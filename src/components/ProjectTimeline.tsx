@@ -18,7 +18,7 @@ export function ProjectItem({ index, log, onVisibilityChange }: ProjectItemProps
                 onVisibilityChange(index, entry.isIntersecting);
             },
             {
-                threshold: .5,
+                threshold: .25,
             }
         );
 

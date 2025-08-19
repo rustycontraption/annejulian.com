@@ -4,7 +4,7 @@ const projectTiles = [
     { link: '/boat', tileImg: `${urlPrefix}boat/hero.webp`, tileText: "don't sink", key: 'boat' },
     { link: '/drone', tileImg: `${urlPrefix}drone/hero.webp`, tileText: "learn to fly", key: 'drone' },
     { link: '/dive', tileImg: `${urlPrefix}dive/mastdive.jpg`, tileText: "show the world the Salish Sea", key: 'dive' },
-    { link: '/miniped', tileImg: `${urlPrefix}miniped/mastminiped.jpg`, tileText: "build a weird contraption", key: 'miniped' },
+    { link: '/miniped', tileImg: `${urlPrefix}miniped/mastminiped.jpg`, tileText: "build a ridiculous moped", key: 'miniped' },
     { link: '/rabbit', tileImg: `${urlPrefix}rabbit/rabbit.png`, tileText: "keep a 40 year old car alive", key: 'rabbit' },
     { link: '/gs750', tileImg: `${urlPrefix}gs750/hero.webp`, tileText: "build a custom motorcycle", key: 'gs750' }
 ];
@@ -129,8 +129,7 @@ Video TX: Walksnail Avatar HD Nano,
 Flight controller: iFlight blitz f7405,
 RX: Radiomaster XR1,
 PDB & ESCs: DYS 4in1,
-Motors: Brotherhobby returner r5 x3 and DYS SE Pro 2205 x1,
-`,
+Motors: Three Brotherhobby returner r5 and one DYS SE Pro 2205`,
             img: `${urlPrefix}drone/top.webp`
         },
         {
@@ -230,16 +229,6 @@ Motors: Brotherhobby returner r5 x3 and DYS SE Pro 2205 x1,
     ],
 }
 
-export interface AboutImg {
-    src: string;
-    height: number;
-}
-
-export interface AboutItem {
-    title: string;
-    text: string;
-    imgs: string[];
-}
 const about = {
     words: [
         "a systems architect",
@@ -328,11 +317,11 @@ const work = {
     ],
     favorite_projects: [
         {
-            heading: "Identity management overhaul",
+            heading: "Identity management from the ground up",
             text: "Led a seamless transition from legacy LDAP to Okta for an entire organization, automating user lifecycle management and evolving the system from manual processes to a fully automated enterprise-grade solution."
         },
         {
-            heading: "SSH Key Management System",
+            heading: "Full-stack solution for SSH key management",
             text: "Designed and implemented a full-stack SSH key management system with a ReactJS frontend and Python backend, streamlining user access to compute resources and nearly eliminating IT overhead for SSH key issues."
         },
         {
@@ -340,11 +329,11 @@ const work = {
             text: "Reverse-engineered and documented a complex legacy CI/CD system for a high-traffic AI-driven platform, then built and integrated a new feature to deploy ephemeral development environments from Git branches."
         },
         {
-            heading: "Server Standardization",
-            text: " Automated and standardized 30+ on-prem GPU AI-research servers using Ansible, implementing role-based access control and reducing downtime by eliminating configuration drift."
+            heading: "Server config automation",
+            text: "Automated and standardized a full fleet of on-prem GPU AI-research servers using Ansible, implementing role-based access control and reducing downtime by eliminating configuration drift."
         },
         {
-            heading: "Underwater Monitoring System",
+            heading: "Underwater 24/7 livestream in the Puget Sound",
             text: "Engineered a fault-tolerant underwater video monitoring system for marine research, achieving 24/7 reliability under extreme environmental constraints with minimal budget."
         }
     ],
@@ -371,7 +360,7 @@ IT and A/V Support, 2013 - 2019`,
         {
             heading: "College IT support",
             roles: `IT Support Specialist, 2007 - 2011`,
-            text: "Provided customer service and technical support for diverse creative technology stack including CAD workstations, 3D printers, and audio/video equipment.  Responsible for user lifecycle in the physical access control system (prox card)."
+            text: "Provided customer service and technical support for diverse creative technology stack including CAD workstations, 3D printers, and audio/video equipment.  Also responsible for user lifecycle in the physical access control system (prox card)."
         }
     ]
 }
