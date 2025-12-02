@@ -44,7 +44,7 @@
 }
 
 .arrowList li::before {
-    content: "\21E8";
+    content: "\2192";
     margin-right: 0.5rem;
     color: inherit;
     font-size: 1rem;
