@@ -22,7 +22,7 @@ export default function Home() {
       <Hero>
         <Title className={classes.title}>
           <pre>{`Hi! 
-My name is Annie, and I architect solutions.`}
+My name is Annie, and I love a challenge.`}
           </pre>
         </Title>
       </Hero>
