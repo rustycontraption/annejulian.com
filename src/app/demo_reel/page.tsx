@@ -28,9 +28,13 @@ export default function DemoReel() {
             display: 'flex',
             justifyContent: 'center',
             position: 'relative',
-            width: '1280px',
-            height: '720px',
-            margin: '0 auto'
+            width: '100%',
+            maxWidth: '1280px',
+            height: 'auto',
+            aspectRatio: '16/9',
+            margin: '0 auto',
+            padding: '0 20px',
+            boxSizing: 'border-box'
         }}>
             {isLoading && (
                 <div style={{
