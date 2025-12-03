@@ -291,7 +291,7 @@ const work = {
             tags: []
         },
         {
-            text: "55 years delivering technical support and leadership at the nation’s fifth most diverse college; consistently tapped as the go-to specialist for situations requiring extreme levels of patience, compassion, and empathy",
+            text: "5 years delivering technical support and leadership at the nation’s fifth most diverse college; consistently tapped as the go-to specialist for situations requiring extreme levels of patience, compassion, and empathy",
             tags: []
         },
         {
