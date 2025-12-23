@@ -287,66 +287,107 @@ const about = {
 const work = {
     prof_summary: [
         {
-            text: "Infrastructure Engineer with 10+ years of expertise in building infrastructure, CI/CD pipelines and tooling for research and creative teams, with a track record of zero-downtime migrations to new technology, and always-green pipelines",
+            lead: "Versatile IT Engineer with 10+ years of experience",
+            text: "working with complex multicampus networks and storage, hybrid on-prem/cloud infrastructure environments, multi-OS fleets of 1,000 machines, and unique and experimental hardware and software.",
             tags: []
         },
         {
-            text: "5 years delivering technical support and leadership at the nation’s fifth most diverse college; consistently tapped as the go-to specialist for situations requiring extreme levels of patience, compassion, and empathy",
+            lead: "Advanced knowledge of IT infrastructure engineering",
+            text: "such as data governance and pipeline design, fleet configuration automation, and large-scale system migrations.",
             tags: []
         },
         {
-            text: "Demonstrated ability to spot process and tooling improvements, assess challenges, and deliver effective, impactful solutions",
+            lead: "Demonstrated ability to spot process and tooling improvements,",
+            text: "assess challenges, and deliver effective, impactful solutions.",
             tags: []
         },
         {
-            text: "Expert in CI/CD pipelines, cloud architecture, and infrastructure as code with proven ability to reverse-engineer complex systems",
+            lead: "Adept at driving adoption of new technologies",
+            text: "through collaboration, building consensus, and meeting stakeholders where they are.",
             tags: []
         },
         {
-            text: "Adept at driving the adoption of new technologies through collaboration and meeting people where they’re at",
+            lead: "Strong background in cross-functional technical leadership",
+            text: "across engineering, research, and non-technical teams.",
             tags: []
         },
-        {
-            text: "Expert in building infrastructure, with a track record of zero-downtime migrations and 99.9%+ system availability",
-            tags: []
-        },
-        {
-            text: "Strong background in cross-functional technical leadership across engineering, research, and non-technical teams",
-            tags: []
-        }
     ],
-    favorite_projects: [
+    skills: [
         {
-            heading: "Identity management from the ground up",
-            text: "I spearheaded an organization-wide identity modernization from legacy LDAP to Okta, automating lifecycle management for 400+ users with a zero-downtime cutover.  Coordinated across IT, HR, legal and research departments to ensure the new system accommodated everyone's needs while also conforming to company policy and legal regulation.  Reduced manual user provisioning overhead for the IT team to nearly zero."
+            heading: "Infrastructure & DevOps",
+            list: [
+                "System administration (Linux, Windows, macOS)",
+                "CI/CD (GitHub Actions, Jenkins, TeamCity, AWS Amplify)",
+                "IaC (Ansible, Terraform, AWS CloudFormation)",
+                "Cloud orchestration (AWS/GCP)",
+                "Virtualization (vSphere, LXC, Docker, Kubernetes)",
+                "SaaS (Microsoft Office365, Google Workspace)",
+                "Networking (subnet design, VLANs, DHCP, DNS, Wake-on-LAN, Cisco IOS)"
+            ]
         },
         {
-            heading: "Full-stack solution for SSH key management",
-            text: "I designed and implemented a full-stack SSH key management system with a ReactJS web portal and Python backend, streamlining user access to compute resources and nearly eliminating IT overhead for SSH key management and support.  Prior to my project, the IT team had to manually store public SSH keys in AWS S3 and relied on scripts to copy those keys to the server, and users had to email their public keys to the IT team.  My project enabled users to upload their public keys themselves via a website I built, and then each server requested the key at login time, fully automating the ssh key management process."
+            heading: "Identity & Security",
+            list: [
+                "Okta",
+                "AWS IAM/Identity Center",
+                "Google Admin",
+                "LDAP",
+                "role-based access control",
+                "SCIM",
+                "SAML",
+                "OAuth/OIDC",
+                "Zero-Trust architecture"
+            ]
         },
         {
-            heading: "Moonshot tool development project",
-            text: "I delivered a moonshot dev-tooling project for a high-traffic research platform with 1M+ monthly users, to enable developers to share ephemeral builds of the platform based on their development Git branches.  I reverse-engineered the complex, legacy, undocumented build system responsible for deploying the platform, then built and integrated a new pipeline to deploy unique, ephemeral versions of the platform from GitHub branches, all while avoiding any impact whatsoever to production."
+            heading: "Collaboration & Leadership",
+            list: [
+                "Technical leadership",
+                "Cross-functional coordination",
+                "Mentoring",
+                "Agile/Scrum",
+                "Stakeholder communication",
+                "Post-incident reviews",
+                "Change management",
+                "Design and code reviews"
+            ]
         },
         {
-            heading: "Underwater 24/7 livestream in the Puget Sound",
-            text: "I developed a unique fault-tolerant underwater video monitoring system for marine research and citizen engagement, creating an innovative solution with no existing precedent at the time for 24/7 operation, under extreme budgetary and environmental constraints."
-        }
+            heading: "Compliance & Regulation",
+            list: [
+                "Export Administration Regulations",
+                "Family Educational Rights and Privacy Act"
+            ]
+        },
+        {
+            heading: "Programming & Development",
+            list: [
+                "Python",
+                "Git",
+                "ReactJS",
+                "Bash",
+                "Full-stack web development",
+                "API development",
+                "Mobile app development (Dart/Flutter)",
+                "Software development lifecycle",
+            ]
+        },
+
     ],
     work_experience: [
         {
-            heading: "Infrastructure engineer at an AI research non-profit",
+            heading: "Infrastructure engineer at the world's only non-profit, open-source AI research lab",
             roles: `Senior Infrastructure Engineer, 2024 - 2025
 Infrastructure Engineer 2, 2021 - 2024
 Information Technology Engineer 2, 2020 - 2021
 Information Technology Engineer, 2019 - 2020`,
-            text: "Infrastructure and identity engineer who modernizes systems to reduce friction, improve security, and scale research and development operations. I design and deliver enterprise-grade identity solutions, automate server and cluster provisioning, and build full‑stack tools that make complex workflows easier for diverse teams. I also mentor junior staff and embed with teams to translate strategic goals into practical, maintainable infrastructure."
+            text: "I architect and automate mission-critical infrastructure that empowers researchers and engineers to focus on their work. My experience spans managing GPU-accelerated compute environments across hybrid cloud platforms (AWS, GCP, on-prem) with 99% uptime, building automation tools in Python, Go, and React that eliminate manual processes, and leading organization-wide security transformations. I've designed and implemented zero-trust identity systems serving 400+ users, automated deployment pipelines for platforms with 1M+ monthly users, and reduced support overhead by up to 98% through self-service tooling. I combine deep technical expertise in infrastructure automation, security, and DevOps with strategic thinking, bridging engineering teams, leadership, and end users to deliver solutions that balance security, usability, and operational efficiency. My work has directly supported major organizational milestones, including a $75M NSF grant through comprehensive cybersecurity policy development."
         },
         {
             heading: "System administrator at the fifth most diverse college in the country",
             roles: `System Administrator, 2014 - 2019
 IT and A/V Support, 2013 - 2019`,
-            text: "I provided culturally sensitive IT support across diverse campus groups and technologies, translating technical processes into clear, user-friendly language to reduce frustration and increase inclusion. As the sole owner of the Apple infrastructure I designed and maintained scalable macOS and iOS systems, implemented build pipelines, an Apple MDM server, and automated deployment workflows to improve workstation reliability. I also partnered with faculty and students to define hardware, software, and support standards that met classroom needs while aligning with institutional IT requirements."
+            text: "I managed mission-critical educational infrastructure serving 10,000+ students, faculty, and staff while maintaining strict FERPA compliance and 99%+ uptime. As the sole macOS subject matter expert, I architected a custom enterprise device management solution that saved $10,000+ annually and reduced macOS support tickets to 0.32% of total volume. I administered complex Active Directory environments with 1,000+ users, automated Windows deployment workflows, and performed root cause analysis across multi-campus network topologies spanning 30+ buildings. Beyond technical execution, I bridged IT and academic worlds by translating complex technical concepts for diverse audiences, collaborating with faculty to balance educational needs with institutional standards, and using data-driven insights to optimize staffing and save $20,000 annually. I consistently delivered creative solutions under budget constraints, from building resilient underwater research streaming systems from spare parts to resolving event space technical failures that directly impacted institutional revenue and reputation."
         },
         {
             heading: "Contractor with an event registration and lead retrieval startup",
