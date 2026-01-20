@@ -1,5 +1,5 @@
 .timeline {
-    width: 50%;
+    width: 75%;
 
     @media (max-width: $mantine-breakpoint-sm) {
         width: auto;
@@ -12,10 +12,12 @@
 
 .logItem {
     display: flex;
-    padding-bottom: 10rem;
+    align-items: flex-start;
+    padding-bottom: 7rem;
     min-width: 300px;
 }
 
 .img {
     border-radius: var(--mantine-radius-md);
+    max-width: 50%;
 }

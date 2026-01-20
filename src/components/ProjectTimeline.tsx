@@ -1,4 +1,4 @@
-import { Stack, Timeline } from "@mantine/core"
+import { Group, Timeline } from "@mantine/core"
 import classes from "./ProjectTimeline.module.css"
 import { useRef, useState, useEffect, useCallback } from "react";
 import { ProjectLogItem } from "../resources/content";
@@ -36,15 +36,15 @@ export function ProjectItem({ index, log, onVisibilityChange }: ProjectItemProps
     }, [index, onVisibilityChange]);
 
     return (
-        <Stack ref={itemRef} className={classes.logItem}>
-            <pre>{log.text}</pre>
-            <div className={classes.img}>
-                {log.img && <img src={log.img} className={classes.img} alt={log.text} />}
-            </div>
-            <div className={classes.img}>
-                {log.model && <img src={log.model} className={classes.img} alt={log.text} />}
-            </div>
-        </Stack >
+        <Group ref={itemRef} className={classes.logItem}>
+            {log.img &&
+                <img src={log.img} className={classes.img} alt={log.text} />
+            }
+            {log.model &&
+                <img src={log.model} className={classes.img} alt={log.text} />
+            }
+            <pre style={{ flex: 1 }}>{log.text}</pre>
+        </Group>
     );
 }
 
@@ -55,12 +55,25 @@ type ProjectTimelineProps = {
 
 export const ProjectTimeline: React.FC<ProjectTimelineProps> = ({ logEntries }) => {
     const [activeIndex, setActiveIndex] = useState<number>(1);
+    const [visibleItems, setVisibleItems] = useState<Set<number>>(new Set());
 
     const handleVisibilityChange = useCallback((itemIndex: number, isVisible: boolean) => {
-        if (isVisible) {
-            setActiveIndex(itemIndex);
+        setVisibleItems(prev => {
+            const newSet = new Set(prev);
+            if (isVisible) {
+                newSet.add(itemIndex);
+            } else {
+                newSet.delete(itemIndex);
+            }
+            return newSet;
+        });
+    }, []);
+
+    useEffect(() => {
+        if (visibleItems.size > 0) {
+            setActiveIndex(Math.max(...Array.from(visibleItems)));
         }
-    }, [setActiveIndex]);
+    }, [visibleItems]);
 
     return (
         <Timeline active={activeIndex} bulletSize={40} className={classes.timeline}>
