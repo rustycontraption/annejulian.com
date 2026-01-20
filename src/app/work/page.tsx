@@ -20,35 +20,47 @@ export default function Work() {
             </Hero>
             <div style={{ height: 50 }}></div>
             <Container size="xl" style={{ padding: 0 }}>
-                <WorkSection title="professional summary">
+                <WorkSection title="summary">
                     <div className={classes.tile}>
                         <ul className={classes.arrowList}>
                             {work.prof_summary.map((item, index) => (
-                                <li key={index}><span><b>{item.lead}</b> {item.text}</span></li>
+                                <li key={index} style={{ paddingBottom: "1rem" }}><span><b>{item.lead}</b> {item.text}</span></li>
                             ))}
                         </ul>
                     </div>
                 </WorkSection>
-                <WorkSection title="skills & experience">
-                    {work.skills.map((item, index) => (
-                        <div className={classes.tile} key={index}>
-                            <Title className={classes.heading}>{item.heading}</Title>
-                            <ul style={{ listStyleType: "disc", paddingLeft: "1rem" }}>
-                                {item.list.map((skill, idx) => (
-                                    <li key={idx} >{skill}</li>
-                                ))}
-                            </ul>
-                        </div>
-                    ))}
-
+                <WorkSection title="key projects">
+                    <div className={classes.tile}>
+                        <ul style={{ listStyleType: "disc", paddingLeft: "1rem" }}>
+                            {work.key_projects.map((item, index) => (
+                                <li key={index} style={{ paddingBottom: "1rem" }}><span>{item}</span></li>
+                            ))}
+                        </ul>
+                    </div>
                 </WorkSection>
-                <WorkSection title="work experience">
+                <WorkSection title="experience">
                     {work.work_experience.map((item, index) => (
                         <div className={classes.tile} style={{ width: "100%" }} key={index}>
                             <Title className={classes.heading}>{item.heading}</Title>
                             <pre>{item.roles}</pre>
                             <br />
-                            <p>{item.text}</p>
+                            <ul style={{ listStyleType: "disc", paddingLeft: "1rem" }}>
+                                {item.text.map((exp, index) => (
+                                    <li key={index} style={{ paddingBottom: "1rem" }}>{exp}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
+                </WorkSection>
+                <WorkSection title="technical expertise">
+                    {work.skills.map((item, index) => (
+                        <div className={classes.tile} key={index}>
+                            <Title className={classes.heading}>{item.heading}</Title>
+                            <ul style={{ listStyleType: "disc", paddingLeft: "1rem" }}>
+                                {item.list.map((skill, idx) => (
+                                    <li key={idx}>{skill}</li>
+                                ))}
+                            </ul>
                         </div>
                     ))}
                 </WorkSection>

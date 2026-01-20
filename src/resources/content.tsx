@@ -287,28 +287,18 @@ const about = {
 const work = {
     prof_summary: [
         {
-            lead: "Versatile IT Engineer with 10+ years of experience",
-            text: "working with complex multicampus networks and storage, hybrid on-prem/cloud infrastructure environments, multi-OS fleets of 1,000 machines, and unique and experimental hardware and software.",
+            lead: "Versatile Infrastructure Architect with 10+ years of experience",
+            text: "architecting and scaling mission-critical infrastructure for research, education, and enterprise environments. Expert in leading organization-wide technical transformations from manual processes to automated zero-trust architectures while driving adoption through cross-functional influence and stakeholder alignment.",
             tags: []
         },
         {
-            lead: "Advanced knowledge of IT infrastructure engineering",
-            text: "such as data governance and pipeline design, fleet configuration automation, and large-scale system migrations.",
+            lead: "Proven track record of making high-impact architectural decisions",
+            text: "that enable business outcomes: architected identity management frameworks serving 400+ researchers, and built collaboration infrastructure supporting platforms with 1M+ monthly users. Specialized in solving ambiguous, complex problems at the intersection of infrastructure, security, and developer experience.",
             tags: []
         },
         {
-            lead: "Demonstrated ability to spot process and tooling improvements,",
-            text: "assess challenges, and deliver effective, impactful solutions.",
-            tags: []
-        },
-        {
-            lead: "Adept at driving adoption of new technologies",
-            text: "through collaboration, building consensus, and meeting stakeholders where they are.",
-            tags: []
-        },
-        {
-            lead: "Strong background in cross-functional technical leadership",
-            text: "across engineering, research, and non-technical teams.",
+            lead: "Deep technical expertise in cloud architecture (AWS/GCP), identity management, IaC, CI/CD, and full-stack development.",
+            text: "Known for translating business needs into scalable technical solutions and mentoring engineers on architecture and best practices.",
             tags: []
         },
     ],
@@ -374,30 +364,52 @@ const work = {
         },
 
     ],
+    key_projects: [
+        "Led enterprise-wide identity transformation from a checklist on a piece of paper to Okta, architecting zero-trust identity framework for multinational workforce with ~20 employee types. Orchestrated cross-functional initiative across HR, Legal, and Operations to establish a unified role-based access-control framework. Designed Okta-centric architecture with secure identity data handling, developed Python migration tooling ensuring data integrity through production cutovers, and implemented SCIM/SAML/OAuth/OIDC integrations across all enterprise systems. Reduced identity management overhead by ~100% while strengthening security posture.",
+        "Transformed GPU AI research server fleet from manual configuration handled by researchers to centralized Infrastructure-as-Code with Ansible and Jenkins, eliminating configuration drift across hybrid on-prem/cloud environments. Coordinated with five diverse research teams to gather requirements, architected a role-based sudo solution, and drove adoption through cross-functional stakeholder alignment and demonstrating value.",
+        "Solved a critical collaboration bottleneck, enabling developers to share test instances of an AI-driven research platform with 1M+ monthly users. Reverse-engineered complex, legacy, undocumented build system, then designed and implemented new CI/CD pipeline using AWS infrastructure to deploy unique, isolated versions from GitHub branches. Improved efficiency, ability to maintain the platform, and developer performance.",
+        "Architected and delivered full-stack SSH key management platform (ReactJS/OAuth frontend, Python API, distributed bash automation), enabling researcher self-service. Hands-on development across the full stack while also designing the architecture. Reduced SSH support tickets by 98% while improving security posture through centralized and automated key management.",
+    ],
     work_experience: [
         {
-            heading: "Infrastructure engineer at the world's only non-profit, open-source AI research lab",
-            roles: `Senior Infrastructure Engineer, 2024 - 2025
-Infrastructure Engineer 2, 2021 - 2024
-Information Technology Engineer 2, 2020 - 2021
-Information Technology Engineer, 2019 - 2020`,
-            text: "I architect and automate mission-critical infrastructure that empowers researchers and engineers to focus on their work. My experience spans managing GPU-accelerated compute environments across hybrid cloud platforms (AWS, GCP, on-prem) with 99% uptime, building automation tools in Python, Go, and React that eliminate manual processes, and leading organization-wide security transformations. I've designed and implemented zero-trust identity systems serving 400+ users, automated deployment pipelines for platforms with 1M+ monthly users, and reduced support overhead by up to 98% through self-service tooling. I combine deep technical expertise in infrastructure automation, security, and DevOps with strategic thinking, bridging engineering teams, leadership, and end users to deliver solutions that balance security, usability, and operational efficiency. My work has directly supported major organizational milestones, including a $75M NSF grant through comprehensive cybersecurity policy development."
+            heading: "Senior Infrastructure Engineer",
+            roles: `at the world's only non-profit, open-source AI research lab
+Jan 2019 - June 2025`,
+            text: [
+                "Built and managed mission-critical AI research infrastructure serving 400+ researchers across hybrid on-prem/AWS/GCP environments, achieving 99% uptime. Balanced performance, cost, security, and researcher autonomy while partnering with engineering and research teams to assess technical challenges, advise on infrastructure design, and deliver custom tooling that was previously out of reach.",
+                "Architected a high-impact collaboration tool for developers of an AI-driven platform with 1M+ monthly users. Reverse-engineered the complex, legacy, undocumented platform build system, then built and integrated a new pipeline to deploy unique, ephemeral versions of the platform from GitHub branches, all with zero impact to production.",
+                "Led organizational strategy for Okta, identity lifecycle, and IT security, partnering with research and engineering leaders to modernize identity workflows, automate onboarding pipelines, and drive enterprise‑wide integration into Okta.",
+                "Mentored junior engineers on architectural thinking, automation patterns, and security best practices.Led cross - functional technical initiatives coordinating researchers, engineers, and administrators.",
+                "Established data governance framework spanning distributed identity systems (Okta, AWS IAM, Google Admin, Active Directory, OpenLDAP). Implemented automated provisioning pipelines and SCIM/OAuth/OIDC/SAML integrations across all enterprise systems, eliminating manual processes and closing security gaps.",
+                "Architected and delivered full-stack solutions (Python APIs, ReactJS frontends, GoLang services) to solve complex infrastructure challenges. Automated multi-account AWS infrastructure with Terraform including VPC peering, tunneling, and cross-cloud networking.",
+                "Implemented Jamf MDM for macOS fleet, establishing configuration management and Apple Business Manager integration.",
+            ]
         },
         {
-            heading: "System administrator at the fifth most diverse college in the country",
-            roles: `System Administrator, 2014 - 2019
-IT and A/V Support, 2013 - 2019`,
-            text: "I managed mission-critical educational infrastructure serving 10,000+ students, faculty, and staff while maintaining strict FERPA compliance and 99%+ uptime. As the sole macOS subject matter expert, I architected a custom enterprise device management solution that saved $10,000+ annually and reduced macOS support tickets to 0.32% of total volume. I administered complex Active Directory environments with 1,000+ users, automated Windows deployment workflows, and performed root cause analysis across multi-campus network topologies spanning 30+ buildings. Beyond technical execution, I bridged IT and academic worlds by translating complex technical concepts for diverse audiences, collaborating with faculty to balance educational needs with institutional standards, and using data-driven insights to optimize staffing and save $20,000 annually. I consistently delivered creative solutions under budget constraints, from building resilient underwater research streaming systems from spare parts to resolving event space technical failures that directly impacted institutional revenue and reputation."
+            heading: "System administrator",
+            roles: `at the fifth most diverse college in the country
+2013 - December 2018`,
+            text: [
+                "Architected and deployed enterprise macOS management platform, automating image deployment and configuration serving 13,000+ students and staff. Saved $10K+ annually in licensing costs and reduced macOS tickets to 0.32% of total tickets through effective automation and documentation.",
+                "Automated Windows deployment pipeline by developing hardware-independent imaging workflow using vSphere, sysprep, and Group Policy, and worked around limitations in commercial tooling to deliver a scalable solution.",
+                "Administered enterprise Active Directory (1,000+ users across multiple domains), maintained 99%+ uptime for student-facing systems, and ensured FERPA compliance. Collaborated with faculty to balance user needs with institutional security and compliance requirements.",
+                "Built zero-budget 24/7 underwater live-stream system for Marine Science Center using repurposed hardware and custom automation, showcasing creative problem-solving under resource constraints.",
+            ]
         },
         {
-            heading: "Contractor with an event registration and lead retrieval startup",
-            roles: `Field Systems Engineer, 2012 - 2013`,
-            text: "I provided nationwide, SLA-driven on-site infrastructure for high-profile tech conferences (Salesforce, Amazon, VMWare), coordinating with union workers, event managers and venue management to ensure compliant, on-time installation and configuration."
+            heading: "Field Systems Engineer (Contractor)",
+            roles: `with an event registration technology provider for some of the world's largest tech conferences
+2012 - 2013`,
+            text: [
+                "Provided nationwide, SLA-driven on-site infrastructure for high-profile tech conferences (Salesforce, Amazon, VMWare), coordinating with union workers, event managers and venue management to ensure compliant, on-time installation and configuration."
+            ]
         },
         {
-            heading: "College IT support",
-            roles: `IT Support Specialist, 2007 - 2011`,
-            text: "I provided technical support to faculty, students, and staff for the complete video game development technology stack, including software (Maya, Unreal Engine, Unity, Photoshop, ZBrush, Mudbox), GPU and Wacom workstations, render farm, and audio/video equipment."
+            heading: "IT Support Specialist",
+            roles: `work study while attending college
+2007 - 2011`,
+            text: [
+                "Provided technical support to faculty, students, and staff for the complete video game development technology stack, including software (Maya, Unreal Engine, Unity, Photoshop, ZBrush, Mudbox), GPU and Wacom workstations, render farm, and audio/video equipment."]
         }
     ]
 }
